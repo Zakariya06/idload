@@ -1,0 +1,119 @@
+#countdown-3 {
+    font-family: 微软雅黑 !important;
+}
+
+#countdown-3 figcaption {
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px !important;
+}
+
+#countdown-3 figure {
+    padding: 0px 2px 10px 2px;
+}
+
+#countdown-3 figure div {
+    background: url('/image/catalog/sj.png');
+    border: 0px;
+    background-size: contain;
+    margin: 3px;
+}
+
+.timeTo.timeTo-black div {
+    background: #000;
+    border: 0px;
+    /*margin-left: 6px;*/
+}
+
+.timeTo span {
+    display: none !important;
+}
+
+.djs_bt {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: Arial, Arial;
+    margin-bottom: 20px;
+}
+
+.djs {
+    height: 280px;
+    background-position: center !important;
+    background: url('/image/catalog/home/sddjs-idlord.jpg');
+}
+
+.djs-1 {
+    width: 49%;
+    text-align: center;
+    min-width: 413px;
+}
+
+.djs-12 {
+    width: 43%;
+    text-align: center;
+}
+
+.timeTo ul {
+    left: 10px !important;
+}
+
+.timeTo ul li {
+    height: 53px;
+    line-height: 53px;
+    color: #fff;
+}
+
+.hdsj {
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    text-align: left;
+    width: 420px;
+    margin: auto;
+}
+
+@media (max-width: 470px) {
+    .djs-1 {
+        width: 100%;
+        min-width: auto;
+        padding-bottom: 30%;
+        padding-top: 31%;
+    }
+    .djs-12 {
+        width: 100%;
+    }
+    .djs {
+        height: auto;
+        background: url('/image/catalog/home/sddjs-idlord-1.jpg');
+        background-size: cover;
+        /*padding: 0px 0px 10px 0px;*/
+    }
+    .timeTo ul li {
+        height: 32px;
+        line-height: 32px;
+    }
+    .timeTo ul {
+        left: 7px !important;
+    }
+    #countdown-3 figcaption {
+        font-size: 12px !important;
+        font-weight: 100;
+    }
+    .djs_bt {
+        font-size: 16px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .djs img {
+        width: 92px;
+    }
+    .none-sj {
+        display: none;
+    }
+    .hdsj {
+        font-size: 12px;
+    }
+}

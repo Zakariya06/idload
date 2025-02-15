@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="desktop win chrome chrome132 webkit oc30 is-guest route-checkout-order store-0 skin-1 desktop-header-active compact-sticky mobile-sticky no-currency no-cart no-wishlist no-compare layout-7" data-jb="45643a14" data-jv="3.1.12"
+    data-ov="3.0.3.8">
+
+<head  >
+ 
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order</title> 
+    <link rel="preload" href="catalog/view/theme/journal3/icons/fonts/icomoon.woff2?v=907f30d557" as="font" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700%7CPoppins:700&amp;subset=latin-ext" type="text/css" rel="stylesheet" />
+    <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/theme/journal3/stylesheet/style.min.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/javascript/mobiscroll/mobiscroll.custom-3.0.0-beta6.min.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/theme/default/stylesheet/widget-multi-connect-v09.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/javascript/reviewpro/magnific-popup.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/javascript/reviewpro/star-rating.min.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+    <link href="catalog/view/javascript/reviewpro/style.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />  
+
+    <link rel="stylesheet" href="./styles/main.css" type="text/css">  
+    <link rel="stylesheet" href="./styles/countdown.css" type="text/css"> 
+
+     
+    <style>
+        .font12 {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 750px) {
+            .font12 {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .font12 {
+                font-size: 13px;
+            }
+        }
+
+        .form-horizontal .control-label {
+            padding-top: 0;
+            line-height: 16px;
+        }
+
+        select.form-control,
+        input.form-control {
+            max-width: 100%;
+        }
+
+        .form-horizontal label {
+            text-align: right;
+        }
+
+        .form-horizontal .form-group {
+            display: block;
+        }
+
+        .upload-file {
+            width: 150px;
+            height: 150px;
+            background-image: url("./image/catalog/home/upload_file.png");
+            background-size: 100% 100%;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            color: rgba(34, 34, 34, 1);
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        @media (max-width: 991px) {
+            .upload-file {
+                width: 100px;
+                height: 100px;
+                font-size: 13px;
+                padding-top: 50px;
+            }
+        }
+
+        .form-input-hide input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class=""> 
+    <div class="djs" style="display: none;">
+        <div style="display: flex;max-width: 1200px;margin: auto;flex-wrap: wrap;">
+            <div class="djs-12">
+            </div>
+            <div class="djs-1">
+                <div class="djs_bt">TIME REMAINING</div>
+                <div id="countdown-3" style="display: contents;"></div>
+                <div style="margin-top: 8px"><a href="./order"><img src="./image/catalog/home/anniu.png" alt="image" /></a></div>
+            </div>
+        </div>
+
+    </div>
+   
+    <div class="mobile-container mobile-main-menu-container">
+        <div class="mobile-wrapper-header">
+            <span>Menu</span>
+            <div class="language-currency top-menu">
+                <div class="mobile-currency-wrapper">
+
+                </div>
+                <div class="mobile-language-wrapper">
+
+                </div>
+            </div>
+            <a class="x"></a>
+        </div>
+        <div class="mobile-main-menu-wrapper">
+
+        </div>
+    </div>
+
+    <div class="mobile-container mobile-filter-container">
+        <div class="mobile-wrapper-header"></div>
+        <div class="mobile-filter-wrapper"></div>
+    </div>
+
+    <div class="mobile-container mobile-cart-content-container">
+        <div class="mobile-wrapper-header">
+            <span>Your Cart</span>
+            <a class="x"></a>
+        </div>
+        <div class="mobile-cart-content-wrapper cart-content"></div>
+    </div>
+
+
+
+    <div class="site-wrapper">
+
+        <header class="header-compact">
+            <div class="header header-compact header-sm">
+              <div class="top-bar navbar-nav">
+                <div class="language-currency top-menu">
+                  <div class="desktop-language-wrapper"></div>
+                  <div class="desktop-currency-wrapper"></div>
+                </div>
+                <div class="third-menu"></div>
+              </div>
+              <div class="mid-bar navbar-nav">
+                <div class="desktop-logo-wrapper">
+                  <div id="logo">
+                    <a href="./index.html">
+                      <img
+                        src="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png"
+                        srcset="
+                          https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png 1x,
+                          https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png 2x
+                        "
+                        width="535"
+                        height="622"
+                        alt="idlord.xyz logo"
+                        title="fake id vendor idlord logo"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div class="desktop-main-menu-wrapper navbar-nav">
+                  <div class="menu-trigger menu-item main-menu-item">
+                    <ul class="j-menu">
+                      <li><a>Menu</a></li>
+                    </ul>
+                  </div>
+                  <div id="main-menu" class="main-menu main-menu-3">
+                    <ul class="j-menu">
+                      <li
+                        class="menu-item main-menu-item main-menu-item-1 multi-level drop-menu"
+                      >
+                        <a href="./index.html">
+                          <span class="links-text">Home</span>
+                        </a>
+                      </li> 
+                      <li
+                        class="menu-item main-menu-item main-menu-item-9 multi-level drop-menu"
+                      >
+                        <a href="/order.html">
+                          <span class="links-text">Order</span>
+                        </a>
+                      </li>  
+                      <li
+                        class="menu-item main-menu-item main-menu-item-15 multi-level drop-menu"
+                      >
+                        <a href="/contact-us.html">
+                          <span class="links-text">Contact Us</span>
+                        </a>
+                      </li>  
+                    </ul>
+                  </div>
+                </div>
+    
+                <div class="header-cart-group">
+                  <div class="top-menu secondary-menu">
+                    <div class="top-menu top-menu-270">
+                      <ul class="j-menu">
+                        <li class="menu-item top-menu-item top-menu-item-1">
+                          <a href="/account"><span class="links-text"></span></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="desktop-search-wrapper mini-search">
+                    <div id="search" class="dropdown">
+                      <button
+                        class="dropdown-toggle search-trigger"
+                        data-toggle="dropdown"
+                      ></button>
+                      <div class="dropdown-menu j-dropdown">
+                        <div class="header-search">
+                          <div class="search-categories dropdown drop-menu">
+                            <div
+                              class="search-categories-button dropdown-toggle"
+                              data-toggle="dropdown"
+                            >
+                              All
+                            </div>
+    
+                            <div class="dropdown-menu j-dropdown">
+                              <ul class="j-menu">
+                                <li data-category_id="0" class="category-level-1">
+                                  <a>All</a>
+                                </li>
+                                <li data-category_id="226" class="category-level-1">
+                                  <a>US State IDs</a>
+                                </li>
+    
+                                <li data-category_id="227" class="category-level-1">
+                                  <a>Canada IDs</a>
+                                </li>
+    
+                                <li data-category_id="228" class="category-level-1">
+                                  <a>SSN Card</a>
+                                </li>
+    
+                                <li data-category_id="230" class="category-level-1">
+                                  <a>EAD Card</a>
+                                </li>
+    
+                                <li data-category_id="229" class="category-level-1">
+                                  <a>PR Card</a>
+                                </li>
+    
+                                <li data-category_id="232" class="category-level-1">
+                                  <a>PR SSN EAD SERIES</a>
+                                </li>
+    
+                                <li data-category_id="231" class="category-level-1">
+                                  <a>Handicap Parking Permit</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <input
+                            type="text"
+                            name="search"
+                            value=""
+                            placeholder="Search for products..."
+                            class="search-input"
+                            data-category_id="0"
+                          />
+                          <button
+                            type="button"
+                            class="search-button" 
+                          ></button>
+                        </div>
+                        <style>
+                          .aa:before {
+                            content: "\e99a" !important;
+                            font-family: icomoon !important;
+                            font-size: 13px;
+                            color: red;
+                          }
+                        </style> 
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+    
+            <div class="mobile-header mobile-default mobile-1">
+              <div class="mobile-top-bar">
+                <div class="mobile-top-menu-wrapper">
+                  <div class="top-menu top-menu-270">
+                    <ul class="j-menu">
+                      <li class="menu-item top-menu-item top-menu-item-1">
+                        <a href="/account"><span class="links-text"></span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-bar sticky-bar">
+                <div class="mobile-logo-wrapper"></div>
+                <div class="mobile-bar-group">
+                  <div class="menu-trigger"></div>
+                  <div class="mobile-top-menu-wrapper">
+                    <div class="top-menu top-menu-270">
+                      <ul class="j-menu">
+                        <li class="menu-item top-menu-item top-menu-item-1">
+                          <a href="/account"><span class="links-text"></span></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mobile-search-wrapper mini-search"></div>
+                  <div class="mobile-cart-wrapper mini-cart"></div>
+                </div>
+              </div>
+            </div>
+          </header>
+
+
+        <div class="container">
+            <div class="">
+                <div id="" class="col-xs-12" style='margin-top:30px'>
+                    <div style="text-align: center;">
+                        <img src="./image/catalog/picture/pc_order.jpg" width="100%" class="hidden-xs hidden-sm" alt="order">
+                        <img src="./image/catalog/picture/m_order.jpg" width="100%" class="hidden-md hidden-lg" alt="order">
+                    </div>
+                    <p style="color:red;" class="font12 hidden">Shortcut to place group order, pls <a href="javascript:;" id="widget-connect" style="color:blue;text-decoration:underline;font-weight:bold;">CONTACT US</a></p>
+                    <p style="font-size:16px;text-align:center;margin-bottom:10px;font-weight:bold;margin-top: 20px">
+                        Step1: Submit Your Fake ID Info
+                    </p>
+                    <form id="fdata" enctype="multipart/form-data" autocomplete="off" style="margin-bottom: 40px;">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-state">Product Select</label>
+                                <div class="col-sm-10">
+                                    <select name="state" id="input-state" class="form-control" style="color:#999999;">
+								<option value="">Select</option>
+                                        <option value="407">US - Green Card</option>
+                                        <option value="436">US - SSN</option>
+                                        <option value="410">California - Handicap Parking Permit</option>
+                                        <option value="428">New York - Handicap Parking Permit</option>
+                                        <option value="409">Canada - British Columbia DL</option>
+                                        <option value="432">Canada - Ontario DL</option>
+                                        <option value="434">Canada - Quebec DL</option>
+                                        <option value="414">Employment Authorization Card</option>
+                                        <option value="406">Alabama DL</option>
+                                        <option value="408">Arizona DL</option>
+                                        <option value="411">California DL</option>
+                                        <option value="412">Connecticut DL</option>
+                                        <option value="413">Delaware DL</option>
+                                        <option value="415">Florida DL</option>
+                                        <option value="416">Georgia DL</option>
+                                        <option value="417">Illinois DL</option>
+                                        <option value="418">Indiana DL</option>
+                                        <option value="419">Kansas DL</option>
+                                        <option value="420">Maryland DL</option>
+                                        <option value="404">Massachusetts DL</option>
+                                        <option value="421">Michigan DL</option>
+                                        <option value="422">Minnesota DL</option>
+                                        <option value="423">Mississippi DL</option>
+                                        <option value="424">Missouri DL</option>
+                                        <option value="425">Nebraska DL</option>
+                                        <option value="426">Nevada DL</option>
+                                        <option value="427">New Jersey DL</option>
+                                        <option value="429">New York DL</option>
+                                        <option value="430">North Carolina DL</option>
+                                        <option value="431">Ohio DL</option>
+                                        <option value="433">Pennsylvania DL</option>
+                                        <option value="435">Rhode Island DL</option>
+                                        <option value="405">South Carolina DL</option>
+                                        <option value="437">Texas DL</option>
+                                        <option value="438">Utah DL</option>
+                                        <option value="439">Virginia DL</option>
+                                        <option value="440">Washington DL</option>
+                                        </select>
+                                    <style>
+                                        #prices {
+                                            display: none;
+                                        }
+                                    </style>
+                                    <div style="color: red;font-size: 18px;font-weight: bold" id="prices">Receive a Free Duplicate with Every ID!</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-method">Social <span class="hidden-lg hidden-md" style="display:inline">(For order confirmation only)</span></label>
+                                <div class="col-sm-3">
+                                    <select name="contact_type" id="input-method" class="form-control" style="color:#999999;">
+    							<option value="">Select</option>
+								 <option value="+1 (213) 547-6021">WhatsApp</option>
+								 <option value="@usiddean">Telegram</option>
+									 </select>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" value="" name="contact" placeholder="+1 (213) 547-6021 (For Your Delivery)" id="input-contact" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-email">Email <span class="hidden-lg hidden-md" style="display:inline">(For order confirmation only)</span></label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="" name="email" placeholder="order@idlord.xyz (For Send Your Tracking Number)" id="input-email" class="form-control" autocomplete="new" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-first">First Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="" name="first_name" placeholder="First Name (For ID Info)" id="input-first" class="form-control" autocomplete="new" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-middle">Middle Name<br class="hidden-xs"/>(<font color='red'>non-required</font>)</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="" name="middle_name" placeholder="Middle Name (For ID Info)" id="input-middle" class="form-control" autocomplete="new" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-last">Last Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="" name="last_name" placeholder="Last Name (For ID Info)" id="input-last" class="form-control" autocomplete="new" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-gender">Sex</label>
+                                <div class="col-sm-10">
+                                    <select name="gender" id="input-gender" class="form-control" style="color:#999999;">
+								<option value="">Select (For ID Info)</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="X" class="hidden" id="gender_X">X<option>
+                                    </select>
+                                            </div>
+                            </div>
+                            <style>
+                                .form-control2::-moz-placeholder {
+                                    color: #999999;
+                                }
+
+                                .form-control2 {
+                                    width: calc(100% - 35px);
+                                    padding-left: 10px;
+                                }
+
+                                .form-control[readonly] {
+                                    background-color: #ffffff;
+                                }
+
+                                .mbsc-mobiscroll .mbsc-sc-itm {
+                                    font-size: 1em;
+                                }
+                            </style>
+                            <div class="form-group ">
+                                <label class="col-sm-2 " for="input-birth">Date Of Birth</label>
+                                <div class="date col-sm-10">
+                                    <button class="btn datebtn" type="button" style="display:inline-block;float:left;width:35px;">
+								<i class="fa fa-calendar"></i>
+							</button>
+                                    <input type="text" value="" name="birthday" placeholder="Select (For ID Info)" id="input-birth" class="form-control form-control2" readonly/> 
+                                </div>
+                            </div>
+                            <style>
+                                body .demo .layui-layer-content {
+                                    background-color: #f8634a;
+                                    color: #fff;
+                                    font-size: 17px;
+                                }
+
+                                body .demo1 .layui-layer-content {
+                                    background-color: #2c4776;
+                                    color: #fff;
+                                    font-size: 17px;
+                                }
+                            </style> 
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-feet">Height(Feet)</label>
+                                <div class="col-sm-10">
+                                    <select name="height_feet" id="input-feet" class="form-control" style="color:#999999;">
+								<option value="">Select (For ID Info)</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                    </select>
+                                    <!--<input type="text" value="" name="height_feet" placeholder="Height(Feet)" id="input-feet" class="form-control"/>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-inches">Height(Inches)</label>
+                                <div class="col-sm-10">
+                                    <select name="height_inches" id="input-inches" class="form-control" style="color:#999999;">
+								<option value="">Select (For ID Info)</option>
+								 <option value="00">00</option>
+								 <option value="01">01</option>
+								 <option value="02">02</option>
+								 <option value="03">03</option>
+								 <option value="04">04</option>
+								 <option value="05">05</option>
+								 <option value="06">06</option>
+								 <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+																								</select>
+                                    <!--<input type="text" value="" name="height_inches" placeholder="Height(Inches)" id="input-inches" class="form-control"/>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-weight">Weight(Pounds)</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="" name="weight" placeholder="160 (For ID Info)" id="input-weight" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-eyes">Eye Color</label>
+                                <div class="col-sm-10">
+                                    <select name="eyes_color" id="input-eyes" class="form-control" style="color:#999999;">
+								<option value="">Select (For ID Info)</option>
+                                    <option value="Black">Black</option>
+								 <option value="Brown">Brown</option>
+								 <option value="Blue">Blue</option>
+								 <option value="Gray">Gray</option>
+								 <option value="Green">Green</option>
+								 <option value="Hazel">Hazel</option>
+								 <option value="Maroon">Maroon</option>
+								 <option value="Pink">Pink</option>
+								 <option value="Multicolor">Multicolor</option>
+								 <option value="Other">Other</option>
+								 </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 " for="input-hair">Hair Color</label>
+                                <div class="col-sm-10">
+                                    <select name="hair_color" id="input-hair" class="form-control" style="color:#999999;">
+								<option value="">Select (For ID Info)</option>
+                                        <option value="Bald">Bald</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Blonde">Blonde</option>
+                                        <option value="Brown">Brown</option>
+                                        <option value="Gray">Gray</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Sandy">Sandy</option>
+                                        <option value="White">White</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class=" col-sm-2" for="address">Address On ID<br class="hidden-xs"/>(<font color='red'>non-required</font>)</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="" class="form-control" style="color:#000;" id="address" name="address" autocomplete="new" placeholder="Select the best-fit address as you type (For ID Info)">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class=" col-sm-2" for="other_requests">Customize More <font color='red'>$10</font><br class="hidden-xs"/>(<font color='red'>non-required</font>)</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" rows="8" id="other_requests" name="other_requests" placeholder="ISS, EXP, CLASS, DD, DLN"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group form-input-hide">
+                                <label for="picture" class="col-sm-2 ">Photo On ID<br class="hidden-xs"/></label>
+                                <div class="col-sm-10">
+                                    <label for="picture" class="custom-file-upload">
+                                <div class="upload-file">Upload file</div>
+                                <input id="picture" name="picture" type="file" accept="image/*" style="color: #000;"/>
+                            </label>
+                                    <img id="headpic" style="display:none;">
+                                    <div style="margin-top:15px;display:none;">
+                                        <a href="javascript:;" style="color:#e22658;font-size: 16px;">Eyes looking front, shoulders even.</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-input-hide">
+                                <label for="signature" class="col-sm-2 ">Signature On ID<br class="hidden-xs"/>(<font color='red'>non-required</font>)<span style="color: red"></label>
+                                <div class="col-sm-10">
+                                    <label for="signature" class="custom-file-upload">
+                                    <div class="upload-file">Upload file</div>
+                                    <input id="signature" name="signature" type="file" accept="image/*" style="color: #000;"/>
+                                </label>
+                                    <img id="signatureimg" style="display:none;">
+                                    <div style="color:#e22658; margin-top:15px;font-size: 16px;margin-bottom: 10px;display:none;">
+                                        We can make one if leave blank.
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form-group" style="margin: 0 auto;height:40px;">
+                            <div class="col-xs-6 ">
+                                <button type="button" id="button-cart" onclick="checkout_submit('cart');" data-loading-text="Loading..." class="btn col-xs-12" style="background:#2C4776;color:#ffffff;">ADD TO CART</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="button" id="button-checkout" onclick="checkout_submit('checkout');" data-loading-text="Loading..." class="btn col-xs-12" style="background:#F8634A;color:#ffffff;">CHECKOUT</button>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>   
+    <style>
+        .layui-hide {
+            display: none;
+        }
+
+        .layui-layedit {
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .layui-layedit-iframe {
+            background: white;
+            font-size: 12px;
+        }
+
+        .layui-layedit-iframe iframe {
+            width: 100%;
+        }
+
+        .layui-layedit-tool {
+            background: white;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style> 
+
+ 
+ 
+
+
+    <footer>
+        <div class="grid-rows">
+            <div class="grid-row grid-row-2">
+                <div class="grid-cols">
+                    <div class="grid-col grid-col-1">
+                        <div class="grid-items">
+                            <div class="grid-item grid-item-1">
+                                <div class="module module-blocks module-blocks-257 blocks-grid">
+                                    <div class="module-body">
+                                        <div class="module-item module-item-1 no-expand">
+                                            <div class="block-body expand-block">
+                                                <div class="block-header"><img src="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-200x232fill.png" srcset="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-200x232fill.png 1x, https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-400x465fill.png 2x"
+                                                        alt="" width="200" height="" class="block-image" /></div>
+                                                <div class="block-wrapper">
+                                                    <div class="block-content  block-html">
+                                                        <p><b>&nbsp;</b></p>
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-col grid-col-2">
+                        <div class="grid-items">
+                            <div class="grid-item grid-item-1">
+                                <div class="links-menu links-menu-75">
+                                    <h3 class="title module-title">Customer Service</h3>
+                                    <ul class="module-body">
+                                        <li class="menu-item links-menu-item links-menu-item-1">
+                                            <a href="/contact-us">
+        <span class="links-text">Contact</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-6">
+                                            <a href="/faq">
+        <span class="links-text">FAQ</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-7">
+                                            <a href="/terms">
+        <span class="links-text">Terms & Conditions</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-8">
+                                            <a href="/shipping-and-delivery">
+        <span class="links-text">Shipping And Delivery</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-9">
+                                            <a href="https://www.idlord.xyz/privacy">
+        <span class="links-text">Privacy Policy</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-10">
+                                            <a href="refund-and-return-policy">
+        <span class="links-text">Refund and Return Policy</span>
+              </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-col grid-col-3">
+                        <div class="grid-items">
+                            <div class="grid-item grid-item-1">
+                                <div class="links-menu links-menu-76">
+                                    <h3 class="title module-title">My Account</h3>
+                                    <ul class="module-body">
+                                        <li class="menu-item links-menu-item links-menu-item-1">
+                                            <a href="https://www.idlord.xyz/index.php?route=account/account">
+        <span class="links-text">My Account</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-2">
+                                            <a href="https://www.idlord.xyz/index.php?route=account/order">
+        <span class="links-text">Order History</span>
+              </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-col grid-col-4">
+                        <div class="grid-items">
+                            <div class="grid-item grid-item-1">
+                                <div class="links-menu links-menu-310">
+                                    <h3 class="title module-title">CONTACT US</h3>
+                                    <ul class="module-body">
+                                        <li class="menu-item links-menu-item links-menu-item-1">
+                                            <a>
+        <span class="links-text">Address：5651 MOSQUITO PASS DR, COLORADO SPRINGS, CO, UNITED STATES</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-2">
+                                            <a>
+        <span class="links-text">Phone：+1 347 472-8713</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-3">
+                                            <a>
+        <span class="links-text">Email：order@idlord.xyz</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-4">
+                                            <a>
+        <span class="links-text">Telegram：@usiddean</span>
+              </a>
+                                        </li>
+
+                                        <li class="menu-item links-menu-item links-menu-item-5">
+                                            <a>
+        <span class="links-text">Whatsapp：+1 347 472-8713</span>
+              </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row grid-row-3">
+                <div class="grid-cols">
+                    <div class="grid-col grid-col-1">
+                        <div class="grid-items">
+                            <div class="grid-item grid-item-1">
+                                <div class="links-menu links-menu-77">
+                                    <ul class="module-body">
+                                        <li class="menu-item links-menu-item links-menu-item-1">
+                                            <a>
+        <span class="links-text">Copyright © 2024, IDLORD.XYZ, All Rights Reserved</span>
+              </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    </div>
+    <!-- .site-wrapper -->
+
+
+
+
+
+
+
+    <script src="catalog/view/theme/journal3/lib/anime/anime.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/vanilla-lazyload/lazyload.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/countdown/jquery.countdown.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/typeahead/typeahead.jquery.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/hoverintent/jquery.hoverIntent.min.js?v=45643a14"></script> 
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.product-options select:last').prop('selectedIndex', 1);
+            var yz = $('.product-price').text();
+            yz = yz.split("$")[1]
+            $('.product-options select:last').on('change', function() {
+                var selectedText = $(this).find('option:selected').text();
+                var qu = selectedText.split("(")[0]
+                var jia = parseInt(qu) / 100;
+
+                var zz = parseInt(yz) * jia
+                if (isNaN(zz)) {
+                    zz = parseInt(yz)
+                }
+                $('.product-price').text('$' + zz.toFixed(2));
+                $('.product-tax').text('Ex Tax: $' + zz.toFixed(2));
+                console.log(qu);
+                console.log(zz);
+            });
+        });
+    </script>
+
+
+    <div class="scroll-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <style>
+        .jt-img {
+            position: fixed;
+            bottom: 0px;
+            transform: translate(-50%, -50%);
+            animation: bounce1 1.5s infinite;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: 99;
+        }
+
+        @keyframes bounce1 {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width:650px) {
+            .hidden-dm {
+                display: none !important
+            }
+        }
+
+        @media (min-width:650px) {
+            .hidden-sj {
+                display: none !important
+            }
+        }
+    </style>
+    <img src="/image/catalog/jt.png" class="hidden-dm jt-img">
+    <img src="/image/catalog/jt-sj.png" class="hidden-sj jt-img">
+    <script>
+        window.onscroll = function() {
+            var bottomOfWindow = document.documentElement.scrollTop + window.innerHeight;
+            var bottomOfDocument = document.documentElement.scrollHeight;
+
+            if (bottomOfWindow >= bottomOfDocument - 200) {
+                $('.jt-img').hide()
+            } else {
+                $('.jt-img').show()
+            }
+        };
+        $('.djs').click(function() {
+            location.href = '/order';
+        })
+    </script>
+    <style>
+        .widget-connect {
+            bottom: 93px;
+        }
+
+        .widget-connect-right2 {
+            width: 128px;
+            height: 40px;
+            background-image: url("./image/catalog/home/float.png");
+            color: #444444;
+            line-height: 37px;
+            right: 75px;
+            bottom: 100px;
+            z-index: 999999;
+        }
+
+        .psmtc_dFeO2 {
+            width: 177px;
+            height: 40px;
+            background-image: url("./image/catalog/home/float.png");
+            color: #444444;
+            line-height: 37px;
+            right: 52px;
+            bottom: 13px;
+            z-index: 999999;
+            position: absolute;
+            background-size: 100% 100%;
+            display: none;
+        }
+
+        .ps_rvm__hidden .psmtc_dFeO2 {
+            display: block;
+        }
+
+        @media (max-width: 470px) {
+            .psmtc_dFeO2 {
+                display: none !important;
+            }
+            .widget-connect-right2 {
+                right: 60px;
+            }
+        }
+    </style>
+    <div class="widget-connect widget-connect-right2">
+        <span style="margin-left: 15px;">popular chat</span>
+    </div>
+    <div class="psmtc_dFeO ">
+        <div class="psmtc_dFeO2">
+            <span style="margin-left: 15px;">privacy online chat</span>
+        </div>
+    </div>
+</body>
+
+</html>
