@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&display=swap');
+
+body {
+  background: #010E28;
+}
+
+.bebas-neue {
+  font-family: "koulen";
+  font-weight: 100 !important;
+}
+
+.container a {
+  color: #fff;
+  display: initial;
+  word-break: break-all;
+}
+
+.container {
+  font-family: Aial;
+  background: #010E28;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 40px !important;
+  margin-top: 40px;
+}
+
+.contact-title {
+  color: #fff;
+  text-align: center;
+  font-size: 82px;
+}
+
+.success {
+  font-size: 33px;
+  line-height: 42px;
+  font-weight: 500;
+}
+
+.contact {
+  line-height: 35px;
+}
+
+.fk .btn {
+  border-radius: 8px;
+  background: #D3424E;
+}
+
+.fk .btn:hover {
+  background: #ee4b58 !important;
+}
+
+.fz45 {
+  font-size: 45px;
+}
+
+.contact-us {
+  margin: 30px 0 0px;
+  padding: 20px 0 40px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.contact-us .col-md-4 div {
+  background: #D3424E;
+  border-radius: 5px;
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.contact-us .col-md-4 p {
+  text-align: center;
+}
+
+.contact-us .col-md-4 a:hover {
+  color: #fff;
+}
+
+.order-hr {
+  border-top: 2px solid #D3424E;
+  margin-top: -20px;
+  max-width: 460px;
+  width: 100%;
+  padding-bottom: 60px;
+}
+
+.order-hr:before {
+  content: '' !important;
+  display: none;
+}
+
+.shipping_method h {
+  margin-left: 3px;
+}
+
+.shipping_method_img img {
+  margin-right: 25px;
+}
+
+.fknu input {
+  text-transform: inherit !important;
+  font-size: 14px;
+}
+
+.uplode_img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 147px;
+  max-height: 147px;
+}
+
+.psmtc_dFeO img {
+  width: 55px !important;
+}
+
+.custom-file-upload div {
+  text-align: center;
+  padding: 50px 0px;
+  border-radius: 4px;
+  border: 2px solid #D3424E;
+  cursor: pointer
+}
+
+.order-status {
+  width: 473px;
+  height: 75px;
+  background: #D3424E;
+  border-radius: 38px;
+  margin: auto;
+  text-align: center;
+  font-size: 56px;
+  line-height: 75px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.success a:hover {
+  color: #fff;
+}
+
+.order-num {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 45px;
+}
+
+.order-num h {
+  margin-left: 40px;
+  font-size: 82px;
+}
+
+.click_copy {
+  width: 136px;
+  height: 36px;
+  font-size: 27px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  background: #D3424E;
+  color: #fff;
+  margin-left: 90px;
+  display: inline-block;
+}
+
+.layui-layer-title {
+  font-family: "koulen";
+  background: #D3424E;
+  font-size: 38px;
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+}
+
+.layui-layer-setwin {
+  top: 12px;
+}
+
+.layui-layer-setwin a {
+  width: 34px;
+  height: 34px;
+}
+
+.layui-layer-ico {
+  background: url("/image/catalog/order/1515.png");
+  background-position: 0px !important;
+}
+
+@media (max-width: 470px) {
+  .container {
+    margin-top: 0px;
+    padding: 20px !important;
+  }
+
+  img[name='psdFeOimage'] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 37px;
+  }
+
+  .success {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .contact {
+    font-size: 15px;
+    line-height: 32px;
+  }
+
+  .order-hr {
+    margin-top: 0px;
+    max-width: 187px;
+    padding-bottom: 0px;
+  }
+
+  .contact-img {
+    width: 44px;
+  }
+
+  .contact-us {
+    margin: 0px;
+    padding: 20px 0 15px;
+  }
+
+  .contact-us .col-md-4 div,
+  .contact-us .col-md-4 div a {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contact-us .col-md-4 {
+    margin: auto;
+    margin-bottom: 15px;
+    max-width: 300px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .fz45 {
+    font-size: 23px;
+  }
+
+  .contact-us p {
+    width: 64px;
+  }
+
+  .contact-us p img {
+    width: 32px;
+  }
+
+  .contact-us .col-md-4 div {
+    padding: 10px 0px;
+  }
+
+  .contact-us .col-md-4 div p {
+    margin-bottom: 0px;
+  }
+
+  .contact-us .col-xs-12 {
+    float: none;
+  }
+
+  .custom-file-upload div {
+    text-align: center;
+    padding: 25px 0px;
+    border: 1px solid #D3424E;
+  }
+
+  .fknu input {
+    font-size: 12px;
+  }
+
+  .order-status {
+    font-size: 22px;
+    width: 190px;
+    height: 32px;
+    line-height: 35px;
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+
+  .order-num {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 31px;
+  }
+
+  .order-num h {
+    display: block;
+    margin-left: 0px;
+    font-size: 60px;
+  }
+
+  .click_copy {
+    margin-left: 0px;
+  }
+
+  .layui-layer-title {
+    font-size: 19px;
+    height: 42px;
+    line-height: 43px;
+  }
+
+  .layui-layer-setwin a {
+    width: 17px;
+    height: 17px;
+  }
+
+  .layui-layer-ico {
+    background-size: contain;
+  }
+}

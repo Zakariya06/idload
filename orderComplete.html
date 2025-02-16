@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  class="desktop win chrome chrome132 webkit oc30 is-guest route-checkout-confirm store-0 skin-1 desktop-header-active compact-sticky mobile-sticky no-currency no-cart no-wishlist no-compare layout-7"
+  data-jb="45643a14"
+  data-jv="3.1.12"
+  data-ov="3.0.3.8"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Confirm</title>
+    <script>
+      window["Journal"] = {
+        isPopup: false,
+        isPhone: false,
+        isTablet: false,
+        isDesktop: true,
+        filterScrollTop: false,
+        filterUrlValuesSeparator: ",",
+        countdownDay: "Day",
+        countdownHour: "Hour",
+        countdownMin: "Min",
+        countdownSec: "Sec",
+        globalPageColumnLeftTabletStatus: true,
+        globalPageColumnRightTabletStatus: true,
+        scrollTop: true,
+        scrollToTop: false,
+        notificationHideAfter: "2000",
+        quickviewPageStyleCloudZoomStatus: true,
+        quickviewPageStyleAdditionalImagesCarousel: false,
+        quickviewPageStyleAdditionalImagesCarouselStyleSpeed: "500",
+        quickviewPageStyleAdditionalImagesCarouselStyleAutoPlay: true,
+        quickviewPageStyleAdditionalImagesCarouselStylePauseOnHover: true,
+        quickviewPageStyleAdditionalImagesCarouselStyleDelay: "3000",
+        quickviewPageStyleAdditionalImagesCarouselStyleLoop: false,
+        quickviewPageStyleAdditionalImagesHeightAdjustment: "5",
+        quickviewPageStyleProductStockUpdate: false,
+        quickviewPageStylePriceUpdate: false,
+        quickviewPageStyleOptionsSelect: "none",
+        quickviewText: "Quickview",
+        mobileHeaderOn: "tablet",
+        subcategoriesCarouselStyleSpeed: "500",
+        subcategoriesCarouselStyleAutoPlay: false,
+        subcategoriesCarouselStylePauseOnHover: true,
+        subcategoriesCarouselStyleDelay: "3000",
+        subcategoriesCarouselStyleLoop: false,
+        productPageStyleCloudZoomStatus: true,
+        productPageStyleCloudZoomPosition: "inner",
+        productPageStyleAdditionalImagesCarousel: false,
+        productPageStyleAdditionalImagesCarouselStyleSpeed: "500",
+        productPageStyleAdditionalImagesCarouselStyleAutoPlay: true,
+        productPageStyleAdditionalImagesCarouselStylePauseOnHover: true,
+        productPageStyleAdditionalImagesCarouselStyleDelay: "3000",
+        productPageStyleAdditionalImagesCarouselStyleLoop: false,
+        productPageStyleAdditionalImagesHeightAdjustment: "5",
+        productPageStyleProductStockUpdate: false,
+        productPageStylePriceUpdate: false,
+        productPageStyleOptionsSelect: "none",
+        infiniteScrollStatus: true,
+        infiniteScrollOffset: "2",
+        infiniteScrollLoadPrev: "Load Previous Products",
+        infiniteScrollLoadNext: "Load Next Products",
+        infiniteScrollLoading: "Loading...",
+        infiniteScrollNoneLeft: "You have reached the end of the list.",
+        checkoutUrl:
+          "https:\/\/www.idlord.xyz\/index.php?route=checkout\/checkout",
+        headerHeight: "",
+        headerCompactHeight: "",
+        mobileMenuOn: "",
+        searchStyleSearchAutoSuggestStatus: true,
+        searchStyleSearchAutoSuggestDescription: false,
+        searchStyleSearchAutoSuggestSubCategories: true,
+        headerMiniSearchDisplay: "default",
+        stickyStatus: true,
+        stickyFullHomePadding: true,
+        stickyFullwidth: true,
+        stickyAt: "",
+        stickyHeight: "40",
+        headerTopBarHeight: "0",
+        topBarStatus: true,
+        headerType: "compact",
+        headerMobileHeight: "60",
+        headerMobileStickyStatus: true,
+        headerMobileTopBarVisibility: false,
+        headerMobileTopBarHeight: "30",
+        columnsCount: 0,
+      };
+    </script>
+    <script>
+      // forEach polyfill
+      if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = Array.prototype.forEach;
+      }
+
+      (function () {
+        if (Journal["isPhone"]) {
+          return;
+        }
+
+        var wrappers = [
+          "search",
+          "cart",
+          "cart-content",
+          "logo",
+          "language",
+          "currency",
+        ];
+        var documentClassList = document.documentElement.classList;
+
+        function extractClassList() {
+          return [
+            "desktop",
+            "tablet",
+            "phone",
+            "desktop-header-active",
+            "mobile-header-active",
+            "mobile-menu-active",
+          ].filter(function (cls) {
+            return documentClassList.contains(cls);
+          });
+        }
+
+        function mqr(mqls, listener) {
+          Object.keys(mqls).forEach(function (k) {
+            mqls[k].addListener(listener);
+          });
+
+          listener();
+        }
+
+        function mobileMenu() {
+          console.warn("mobile menu!");
+
+          var element = document.querySelector("#main-menu");
+          var wrapper = document.querySelector(".mobile-main-menu-wrapper");
+
+          if (element && wrapper) {
+            wrapper.appendChild(element);
+          }
+
+          var main_menu = document.querySelector(".main-menu");
+
+          if (main_menu) {
+            main_menu.classList.add("accordion-menu");
+          }
+
+          document
+            .querySelectorAll(".main-menu .dropdown-toggle")
+            .forEach(function (element) {
+              element.classList.remove("dropdown-toggle");
+              element.classList.add("collapse-toggle");
+              element.removeAttribute("data-toggle");
+            });
+
+          document
+            .querySelectorAll(".main-menu .dropdown-menu")
+            .forEach(function (element) {
+              element.classList.remove("dropdown-menu");
+              element.classList.remove("j-dropdown");
+              element.classList.add("collapse");
+            });
+        }
+
+        function desktopMenu() {
+          console.warn("desktop menu!");
+
+          var element = document.querySelector("#main-menu");
+          var wrapper = document.querySelector(".desktop-main-menu-wrapper");
+
+          if (element && wrapper) {
+            wrapper.insertBefore(
+              element,
+              document.querySelector("#main-menu-2")
+            );
+          }
+
+          var main_menu = document.querySelector(".main-menu");
+
+          if (main_menu) {
+            main_menu.classList.remove("accordion-menu");
+          }
+
+          document
+            .querySelectorAll(".main-menu .collapse-toggle")
+            .forEach(function (element) {
+              element.classList.add("dropdown-toggle");
+              element.classList.remove("collapse-toggle");
+              element.setAttribute("data-toggle", "dropdown");
+            });
+
+          document
+            .querySelectorAll(".main-menu .collapse")
+            .forEach(function (element) {
+              element.classList.add("dropdown-menu");
+              element.classList.add("j-dropdown");
+              element.classList.remove("collapse");
+            });
+
+          document.body.classList.remove("mobile-wrapper-open");
+        }
+
+        function mobileHeader() {
+          console.warn("mobile header!");
+
+          Object.keys(wrappers).forEach(function (k) {
+            var element = document.querySelector("#" + wrappers[k]);
+            var wrapper = document.querySelector(
+              ".mobile-" + wrappers[k] + "-wrapper"
+            );
+
+            if (element && wrapper) {
+              wrapper.appendChild(element);
+            }
+
+            if (wrappers[k] === "cart-content") {
+              if (element) {
+                element.classList.remove("j-dropdown");
+                element.classList.remove("dropdown-menu");
+              }
+            }
+          });
+
+          var search = document.querySelector("#search");
+          var cart = document.querySelector("#cart");
+
+          if (search && Journal["searchStyle"] === "full") {
+            search.classList.remove("full-search");
+            search.classList.add("mini-search");
+          }
+
+          if (cart && Journal["cartStyle"] === "full") {
+            cart.classList.remove("full-cart");
+            cart.classList.add("mini-cart");
+          }
+        }
+
+        function desktopHeader() {
+          console.warn("desktop header!");
+
+          Object.keys(wrappers).forEach(function (k) {
+            var element = document.querySelector("#" + wrappers[k]);
+            var wrapper = document.querySelector(
+              ".desktop-" + wrappers[k] + "-wrapper"
+            );
+
+            if (wrappers[k] === "cart-content") {
+              if (element) {
+                element.classList.add("j-dropdown");
+                element.classList.add("dropdown-menu");
+                document.querySelector("#cart").appendChild(element);
+              }
+            } else {
+              if (element && wrapper) {
+                wrapper.appendChild(element);
+              }
+            }
+          });
+
+          var search = document.querySelector("#search");
+          var cart = document.querySelector("#cart");
+
+          if (search && Journal["searchStyle"] === "full") {
+            search.classList.remove("mini-search");
+            search.classList.add("full-search");
+          }
+
+          if (cart && Journal["cartStyle"] === "full") {
+            cart.classList.remove("mini-cart");
+            cart.classList.add("full-cart");
+          }
+
+          documentClassList.remove("mobile-cart-content-container-open");
+          documentClassList.remove("mobile-main-menu-container-open");
+          documentClassList.remove("mobile-overlay");
+        }
+
+        function moveElements(classList) {
+          if (classList.includes("mobile-header-active")) {
+            mobileHeader();
+            mobileMenu();
+          } else if (classList.includes("mobile-menu-active")) {
+            desktopHeader();
+            mobileMenu();
+          } else {
+            desktopHeader();
+            desktopMenu();
+          }
+        }
+
+        var mqls = {
+          phone: window.matchMedia("(max-width: 768px)"),
+          tablet: window.matchMedia("(max-width: 1024px)"),
+          menu: window.matchMedia(
+            "(max-width: " + Journal["mobileMenuOn"] + "px)"
+          ),
+        };
+
+        mqr(mqls, function () {
+          var oldClassList = extractClassList();
+
+          if (Journal["isDesktop"]) {
+            if (mqls.phone.matches) {
+              documentClassList.remove("desktop");
+              documentClassList.remove("tablet");
+              documentClassList.add("mobile");
+              documentClassList.add("phone");
+            } else if (mqls.tablet.matches) {
+              documentClassList.remove("desktop");
+              documentClassList.remove("phone");
+              documentClassList.add("mobile");
+              documentClassList.add("tablet");
+            } else {
+              documentClassList.remove("mobile");
+              documentClassList.remove("phone");
+              documentClassList.remove("tablet");
+              documentClassList.add("desktop");
+            }
+
+            if (
+              documentClassList.contains("phone") ||
+              (documentClassList.contains("tablet") &&
+                Journal["mobileHeaderOn"] === "tablet")
+            ) {
+              documentClassList.remove("desktop-header-active");
+              documentClassList.add("mobile-header-active");
+            } else {
+              documentClassList.remove("mobile-header-active");
+              documentClassList.add("desktop-header-active");
+            }
+          }
+
+          if (
+            documentClassList.contains("desktop-header-active") &&
+            mqls.menu.matches
+          ) {
+            documentClassList.add("mobile-menu-active");
+          } else {
+            documentClassList.remove("mobile-menu-active");
+          }
+
+          var newClassList = extractClassList();
+
+          if (oldClassList.join(" ") !== newClassList.join(" ")) {
+            if (
+              documentClassList.contains("safari") &&
+              !documentClassList.contains("ipad") &&
+              navigator.maxTouchPoints &&
+              navigator.maxTouchPoints > 2
+            ) {
+              window
+                .fetch("index.php?route=journal3/journal3/device_detect", {
+                  method: "POST",
+                  body: "device=ipad",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                  },
+                })
+                .then(function (data) {
+                  return data.json();
+                })
+                .then(function (data) {
+                  if (data.response.reload) {
+                    window.location.reload();
+                  }
+                });
+            }
+
+            if (document.readyState === "loading") {
+              document.addEventListener("DOMContentLoaded", function () {
+                moveElements(newClassList);
+              });
+            } else {
+              moveElements(newClassList);
+            }
+          }
+        });
+      })();
+
+      (function () {
+        var cookies = {};
+        var style = document.createElement("style");
+        var documentClassList = document.documentElement.classList;
+
+        document.head.appendChild(style);
+
+        document.cookie.split("; ").forEach(function (c) {
+          var cc = c.split("=");
+          cookies[cc[0]] = cc[1];
+        });
+
+        if (Journal["popup"]) {
+          for (var i in Journal["popup"]) {
+            if (!cookies["p-" + Journal["popup"][i]["c"]]) {
+              documentClassList.add("popup-open");
+              documentClassList.add("popup-center");
+              break;
+            }
+          }
+        }
+
+        if (Journal["notification"]) {
+          for (var i in Journal["notification"]) {
+            if (cookies["n-" + Journal["notification"][i]["c"]]) {
+              style.sheet.insertRule(
+                ".module-notification-" +
+                  Journal["notification"][i]["m"] +
+                  "{ display:none }"
+              );
+            }
+          }
+        }
+
+        if (Journal["headerNotice"]) {
+          for (var i in Journal["headerNotice"]) {
+            if (cookies["hn-" + Journal["headerNotice"][i]["c"]]) {
+              style.sheet.insertRule(
+                ".module-header_notice-" +
+                  Journal["headerNotice"][i]["m"] +
+                  "{ display:none }"
+              );
+            }
+          }
+        }
+
+        if (Journal["layoutNotice"]) {
+          for (var i in Journal["layoutNotice"]) {
+            if (cookies["ln-" + Journal["layoutNotice"][i]["c"]]) {
+              style.sheet.insertRule(
+                ".module-layout_notice-" +
+                  Journal["layoutNotice"][i]["m"] +
+                  "{ display:none }"
+              );
+            }
+          }
+        }
+      })();
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700%7CPoppins:700&amp;subset=latin-ext"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="catalog/view/javascript/bootstrap/css/bootstrap.min.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="catalog/view/javascript/font-awesome/css/font-awesome.min.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="catalog/view/theme/journal3/stylesheet/style.min.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="catalog/view/theme/default/stylesheet/widget-multi-connect-v09.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="catalog/view/javascript/reviewpro/magnific-popup.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="catalog/view/javascript/reviewpro/star-rating.min.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="catalog/view/javascript/reviewpro/style.css?v=45643a14"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="https://www.idlord.xyz/index.php?route=checkout/confirm"
+      rel="canonical"
+    />
+    <link
+      href="https://www.idlord.xyz/image/catalog/9c73a5f313a3d8e7f2088b9def96527.png"
+      rel="icon"
+    />
+
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/countdown.css" />
+    <link rel="stylesheet" href="./styles/orderComplete.css" />
+
+    <script src="catalog/view/theme/journal3/lib/modernizr/modernizr-custom.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/jquery/jquery-2.1.1.min.js?v=45643a14"></script>
+    <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js?v=45643a14"></script>
+    <script src="catalog/view/javascript/common.js?v=45643a14"></script>
+    <script src="catalog/view/javascript/layer/layer.js?v=45643a14"></script>
+    <script src="catalog/view/javascript/reviewpro/jquery.cookie.min.js?v=45643a14"></script>
+    <script src="catalog/view/javascript/reviewpro/jquery.magnific-popup.min.js?v=45643a14"></script>
+    <script src="catalog/view/javascript/reviewpro/star-rating.min.js?v=45643a14"></script>
+  </head>
+
+  <body class="">
+    <div class="djs" style="display: none">
+      <div
+        style="display: flex; max-width: 1200px; margin: auto; flex-wrap: wrap"
+      >
+        <div class="djs-12"></div>
+        <div class="djs-1">
+          <div class="djs_bt">TIME REMAINING</div>
+          <div id="countdown-3" style="display: contents"></div>
+          <div style="margin-top: 8px">
+            <a href="/order"><img src="/image/catalog/home/anniu.png" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-container mobile-main-menu-container">
+      <div class="mobile-wrapper-header">
+        <span>Menu</span>
+        <div class="language-currency top-menu">
+          <div class="mobile-currency-wrapper"></div>
+          <div class="mobile-language-wrapper"></div>
+        </div>
+        <a class="x"></a>
+      </div>
+      <div class="mobile-main-menu-wrapper"></div>
+    </div>
+
+    <div class="mobile-container mobile-filter-container">
+      <div class="mobile-wrapper-header"></div>
+      <div class="mobile-filter-wrapper"></div>
+    </div>
+
+    <div class="mobile-container mobile-cart-content-container">
+      <div class="mobile-wrapper-header">
+        <span>Your Cart</span>
+        <a class="x"></a>
+      </div>
+      <div class="mobile-cart-content-wrapper cart-content"></div>
+    </div>
+
+    <div class="site-wrapper">
+      <header class="header-compact">
+        <div class="header header-compact header-sm">
+          <div class="top-bar navbar-nav">
+            <div class="language-currency top-menu">
+              <div class="desktop-language-wrapper"></div>
+              <div class="desktop-currency-wrapper"></div>
+            </div>
+            <div class="third-menu"></div>
+          </div>
+          <div class="mid-bar navbar-nav">
+            <div class="desktop-logo-wrapper">
+              <div id="logo">
+                <a href="./index.html">
+                  <img
+                    src="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png"
+                    srcset="
+                      https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png 1x,
+                      https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png 2x
+                    "
+                    width="535"
+                    height="622"
+                    alt="idlord.xyz logo"
+                    title="fake id vendor idlord logo"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="desktop-main-menu-wrapper navbar-nav">
+              <div class="menu-trigger menu-item main-menu-item">
+                <ul class="j-menu">
+                  <li><a>Menu</a></li>
+                </ul>
+              </div>
+              <div id="main-menu" class="main-menu main-menu-3">
+                <ul class="j-menu">
+                  <li
+                    class="menu-item main-menu-item main-menu-item-1 multi-level drop-menu"
+                  >
+                    <a href="./index.html">
+                      <span class="links-text">Home</span>
+                    </a>
+                  </li>
+                  <li
+                    class="menu-item main-menu-item main-menu-item-9 multi-level drop-menu"
+                  >
+                    <a href="/order.html">
+                      <span class="links-text">Order</span>
+                    </a>
+                  </li>
+                  <li
+                    class="menu-item main-menu-item main-menu-item-15 multi-level drop-menu"
+                  >
+                    <a href="/contact-us.html">
+                      <span class="links-text">Contact Us</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="header-cart-group">
+              <div class="top-menu secondary-menu">
+                <div class="top-menu top-menu-270">
+                  <ul class="j-menu">
+                    <li class="menu-item top-menu-item top-menu-item-1">
+                      <a href="/account"><span class="links-text"></span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="desktop-search-wrapper mini-search">
+                <div id="search" class="dropdown">
+                  <button
+                    class="dropdown-toggle search-trigger"
+                    data-toggle="dropdown"
+                  ></button>
+                  <div class="dropdown-menu j-dropdown">
+                    <div class="header-search">
+                      <div class="search-categories dropdown drop-menu">
+                        <div
+                          class="search-categories-button dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          All
+                        </div>
+
+                        <div class="dropdown-menu j-dropdown">
+                          <ul class="j-menu">
+                            <li data-category_id="0" class="category-level-1">
+                              <a>All</a>
+                            </li>
+                            <li data-category_id="226" class="category-level-1">
+                              <a>US State IDs</a>
+                            </li>
+
+                            <li data-category_id="227" class="category-level-1">
+                              <a>Canada IDs</a>
+                            </li>
+
+                            <li data-category_id="228" class="category-level-1">
+                              <a>SSN Card</a>
+                            </li>
+
+                            <li data-category_id="230" class="category-level-1">
+                              <a>EAD Card</a>
+                            </li>
+
+                            <li data-category_id="229" class="category-level-1">
+                              <a>PR Card</a>
+                            </li>
+
+                            <li data-category_id="232" class="category-level-1">
+                              <a>PR SSN EAD SERIES</a>
+                            </li>
+
+                            <li data-category_id="231" class="category-level-1">
+                              <a>Handicap Parking Permit</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <input
+                        type="text"
+                        name="search"
+                        value=""
+                        placeholder="Search for products..."
+                        class="search-input"
+                        data-category_id="0"
+                      />
+                      <button type="button" class="search-button"></button>
+                    </div>
+                    <style>
+                      .aa:before {
+                        content: "\e99a" !important;
+                        font-family: icomoon !important;
+                        font-size: 13px;
+                        color: red;
+                      }
+                    </style>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-header mobile-default mobile-1">
+          <div class="mobile-top-bar">
+            <div class="mobile-top-menu-wrapper">
+              <div class="top-menu top-menu-270">
+                <ul class="j-menu">
+                  <li class="menu-item top-menu-item top-menu-item-1">
+                    <a href="/account"><span class="links-text"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-bar sticky-bar">
+            <div class="mobile-logo-wrapper"></div>
+            <div class="mobile-bar-group">
+              <div class="menu-trigger"></div>
+              <div class="mobile-top-menu-wrapper">
+                <div class="top-menu top-menu-270">
+                  <ul class="j-menu">
+                    <li class="menu-item top-menu-item top-menu-item-1">
+                      <a href="/account"><span class="links-text"></span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mobile-search-wrapper mini-search"></div>
+              <div class="mobile-cart-wrapper mini-cart"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="checkout-cart" class="container">
+        <div class="">
+          <div class="col-xs-12" style="margin: 20px 0 0">
+            <div
+              class="row hidden-lg hidden-sm hidden-md hidden"
+              style="font-weight: bold; color: red; margin-bottom: 10px"
+            >
+              <div class="col-xs-12" style="font-size: 17px">
+                View more please slide<img
+                  src="/image/catalog/picture/slider2.png"
+                  height="30px"
+                />
+              </div>
+            </div>
+            <p class="step_title">Step3: Order Confirmation</p>
+            <div class="infobg">
+              <h1></h1>
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <td class="text-center hidden-xs">State</td>
+                      <td class="text-center">Photo</td>
+                      <td class="text-center hidden-xs">Price</td>
+                      <td class="text-center hidden-xs">Quantity</td>
+                      <td class="text-center hidden-xs">Subtotal</td>
+                      <td class="text-center">Name</td>
+                      <td class="text-center">ID Info</td>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td class="text-center hidden-xs">Florida DL</td>
+                      <td class="text-center"></td>
+                      <td class="text-center hidden-xs">$95</td>
+                      <td class="text-center td-qty hidden-xs">
+                        <div class="input-group btn-block">
+                          <div class="stepper">
+                            <input
+                              type="text"
+                              name="quantity[2302925]"
+                              value="1"
+                              size="1"
+                              id="quantity2302925"
+                              class="form-control"
+                            />
+                            <span>
+                              <i class="fa fa-angle-up"></i>
+                              <i class="fa fa-angle-down"></i>
+                            </span>
+                          </div>
+                          <span class="input-group-btn">
+                            <button
+                              type="button"
+                              data-toggle="tooltip"
+                              title="Update"
+                              onclick="cart_update(this, '2302925')"
+                              class="btn btn-update"
+                            >
+                              <i class="fa fa-refresh"></i>
+                            </button>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-center hidden-xs">$95</td>
+                      <td class="text-center">adaerqa asdfasdfadsf</td>
+                      <td class="text-center">
+                        <button
+                          type="button"
+                          title="view"
+                          class="btn btn-mini btn-success"
+                          style="margin-bottom: 5px"
+                          onclick="cart_view('2302925');"
+                        >
+                          View
+                        </button>
+                        <button
+                          type="button"
+                          title="Edit"
+                          class="btn btn-mini btn-primary hidden"
+                          onclick="cart_edit('2302925', '415');"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          type="button"
+                          title="Remove"
+                          class="btn btn-mini btn-danger hidden"
+                          onclick="cart_remove('2302925');"
+                          style="background: red; color: #ffffff"
+                        >
+                          <i class="fa fa-trash-o fa-5x"></i>
+                        </button>
+                        <button
+                          type="button"
+                          data-toggle="tooltip"
+                          title="Remove"
+                          style="margin-bottom: 5px"
+                          class="btn btn-remove"
+                          onclick="cart_remove('2302925');"
+                        >
+                          <i class="fa fa-trash-o"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="totals_sub">
+                <span
+                  >Subtotal:
+                  <h style="font-weight: bold; font-size: 16px; color: #ff0000"
+                    >$95</h
+                  ></span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                height: 10px;
+                width: 100%;
+                background: rgba(247, 248, 250, 1);
+              "
+            ></div>
+            <div class="infobg">
+              <div class="row" style="margin-top: 20px">
+                <div class="col-lg-6 col-md-5 col-xs-12 col-sm-12"></div>
+                <style>
+                  @media (max-width: 991px) {
+                    .shipping-font {
+                      font-size: 15px;
+                    }
+                  }
+                </style>
+                <div class="col-xs-12">
+                  <table
+                    class="table table-bordered table1"
+                    style="border-width: 0px !important; font-size: 14px"
+                  >
+                    <tr style="border-width: 0px !important; height: 70px">
+                      <td class="text-right">
+                        <label
+                          class="col-sm-2"
+                          style="width: 19%"
+                          for="input-state"
+                          ><strong class="required"
+                            >Express Select</strong
+                          ></label
+                        >
+                        <ul id="shipping_method">
+                          <li style="padding-left: 0; text-indent: 0">
+                            <input
+                              type="radio"
+                              value="charge"
+                              name="shipping_method"
+                              id="shipping_method_charge"
+                              checked="checked"
+                            />
+                            <label for="shipping_method_charge"
+                              ><span for="shipping_method_charge"
+                                ><span style="font-weight: bold"
+                                  >Rush shipping:</span
+                                >
+                                1 week,<span style="color: red">
+                                  $80</span
+                                ></span
+                              ></label
+                            >
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr style="height: 70px">
+                      <td class="text-right" style="background: #fff">
+                        <label
+                          class="col-sm-2"
+                          style="width: 19%; margin-top: 7px"
+                          for="input-state"
+                          >Coupon</label
+                        >
+                        <div class="shipping_coupon">
+                          <input
+                            type="text"
+                            placeholder="Optional"
+                            name="coupons_code"
+                            value=""
+                            class="form-control"
+                            style="
+                              display: inline-block;
+                              background: #f7f8fa !important;
+                              border: 1px solid #f7f8fa !important;
+                            "
+                            id="coupons_code"
+                          />
+                          <button
+                            type="submit"
+                            class="btn btn-primary"
+                            style="
+                              display: inline-block;
+                              height: 38px;
+                              margin-bottom: 4px;
+                            "
+                            id="coupons"
+                          >
+                            <i class="fa fa-refresh"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="height: 70px">
+                      <td class="text-right">
+                        <label
+                          class="col-sm-2"
+                          style="width: 19%; margin-top: 17px"
+                          for="input-state"
+                          >Select your Payment method</label
+                        >
+                        <div class="shipping_coupon shipping_coupon1">
+                          <div
+                            style="display: flex; flex-wrap: wrap"
+                            id="shipping_method"
+                          >
+                            <div class="shipping_method shipping_method_active">
+                              <img src="/image/catalog/order/89.png" />
+                              <h>Crypto currency</h>
+                              <span style="display: none">Crypto Currency</span>
+                            </div>
+                            <div class="shipping_method">
+                              <img src="/image/catalog/order/88.png" />
+                              <h>Razer Gold Gift Card</h>
+                              <span style="display: none">Gift Card</span>
+                            </div>
+                            <div class="shipping_method">
+                              <img src="/image/catalog/order/90.png" />
+                              <h>Bank transfer</h>
+                              <span style="display: none">Bank Transfer</span>
+                            </div>
+                            <div class="shipping_method">
+                              <img src="/image/catalog/order/1466.png" />
+                              <h>Venmo/Zelle</h>
+                              <span style="display: none">Venmo/Zelle</span>
+                            </div>
+                            <div class="shipping_method">
+                              <img src="/image/catalog/order/92.png" />
+                              <h>Other</h>
+                              <span style="display: none">Other</span>
+                            </div>
+                          </div>
+                          <div style="margin-top: 15px" id="shipping_method1">
+                            <div class="shipping_method_img">
+                              <p class="accepted_crypto">
+                                Accepted Cryptocurrencies
+                              </p>
+                              <span style="display: flex">
+                                <img src="/image/catalog/order/1-1.png" />
+                                <img src="/image/catalog/order/1-2.png" />
+                                <img src="/image/catalog/order/1-3.png" />
+                                <img src="/image/catalog/order/1-4.png" />
+                              </span>
+                            </div>
+                            <div class="shipping_method_img hidden">
+                              <p class="accepted_crypto">
+                                Accept Digital or Physical Razer Gold Gift
+                                Card<h
+                                  style="
+                                    font-size: 12px;
+                                    color: #6f6f6f;
+                                    margin-left: 10px;
+                                  "
+                                  >(Extra 15% processing fees)
+                                </h>
+                              </p>
+                              <span style="display: flex">
+                                <img
+                                  src="/image/catalog/order/f60e08a43a089023a7a11a2c9ff050a.jpg"
+                                />
+                              </span>
+                            </div>
+                            <div class="shipping_method_img hidden">
+                              <p class="accepted_crypto">
+                                Accepted Wise, Remitly or more Banking Apps
+                              </p>
+                              <span style="display: flex">
+                                <img src="/image/catalog/order/wise.png" />
+                                <img src="/image/catalog/order/remitly.png" />
+                              </span>
+                            </div>
+                            <div class="shipping_method_img hidden">
+                              <p class="accepted_crypto">
+                                Accepted Venmo, Zelle, Cash App<h
+                                  style="
+                                    font-size: 12px;
+                                    color: #6f6f6f;
+                                    margin-left: 10px;
+                                  "
+                                  >(Extra 10% processing fees)
+                                </h>
+                              </p>
+                              <span style="display: flex">
+                                <img src="/image/catalog/order/4-3.png" />
+                                <img src="/image/catalog/order/5-1.png" />
+                                <img src="/image/catalog/order/4-2.png" />
+                              </span>
+                            </div>
+                            <div class="shipping_method_img hidden">
+                              <p class="accepted_crypto">
+                                For more payment methods
+                              </p>
+                              <span style="display: flex">
+                                <img src="/image/catalog/order/4-2.png" />
+                                <img
+                                  src="/image/catalog/order/4-3.png"
+                                  style="display: none"
+                                />
+                                <img src="/image/catalog/order/3-2.png" />
+                                <h
+                                  style="
+                                    font-size: 12px;
+                                    color: #ff0000;
+                                    line-height: 36px;
+                                    display: none;
+                                  "
+                                  >processing fees:10%</h
+                                >
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="row hidden">
+                <div class="col-sm-12"></div>
+              </div>
+              <div
+                style="
+                  margin-top: 22px;
+                  border-top: 1px solid #eeeeee;
+                  text-align: right;
+                "
+              >
+                <span style="line-height: 77px; margin-right: 30px"
+                  >Total:
+                  <h style="font-weight: bold; font-size: 24px; color: red">
+                    $175</h
+                  ></span
+                >
+                <div class="buttons">
+                  <div class="pull-right">
+                    <input
+                      type="button"
+                      value="PAY NOW"
+                      data-loading-text="Loading..."
+                      class="btn btn-primary"
+                      style="
+                        background: #f8634a;
+                        color: #ffffff;
+                        font-weight: bold;
+                        width: 200px;
+                        height: 40px;
+                      "
+                    />
+                  </div>
+                </div>
+                <script type="text/javascript">
+                  $("#button-confirm").on("click", function () {
+                    window.location.href = "./orderPreview.html";
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#shipping_method div").click(function () {
+          $(this)
+            .addClass("shipping_method_active")
+            .siblings()
+            .removeClass("shipping_method_active");
+          $("#shipping_method1 div")
+            .eq($(this).index())
+            .removeClass("hidden")
+            .siblings()
+            .addClass("hidden");
+          var type = $(".shipping_method_active h").html();
+          var payment_method = $(".shipping_method_active span").html();
+          $.ajax({
+            url:
+              "index.php?route=checkout/confirm/paymenttype&payment_type=" +
+              type +
+              "&payment_method=" +
+              payment_method,
+            success: function () {
+              location.reload();
+            },
+          });
+        });
+        function cart_view(key) {
+          var sWidth = screen.width;
+          console.log(sWidth);
+          var oWidth = "500px";
+          if (sWidth < 500) {
+            oWidth = "100%";
+          }
+          layer.open({
+            type: 2,
+            title: " ",
+            shadeClose: true,
+            shade: 0.8,
+            area: [oWidth, "75%"],
+            content:
+              "https://www.idlord.xyz/index.php?route=checkout/order/view_info&order_id=" +
+              key +
+              "&action=comfirm",
+          });
+        }
+        function cart_edit(key, product_id) {
+          if (product_id == 80) {
+            location = "/order2&order_id=" + key + "&do=update";
+          } else if (product_id == 78) {
+            location = "/order3&order_id=" + key + "&do=update";
+          } else {
+            location =
+              "https://www.idlord.xyz/index.php?route=checkout/order&order_id=" +
+              key +
+              "&do=update";
+          }
+        }
+        function cart_remove(key) {
+          $.ajax({
+            url: "https://www.idlord.xyz/index.php?route=checkout/cart/remove",
+            type: "post",
+            data: "order_id=" + key + "&action=comfirm",
+            dataType: "json",
+            beforeSend: function () {
+              layer.load();
+            },
+            complete: function () {
+              layer.closeAll("loading");
+            },
+            success: function (json) {
+              console.log(json);
+              location.reload();
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+              alert(
+                thrownError +
+                  "\r\n" +
+                  xhr.statusText +
+                  "\r\n" +
+                  xhr.responseText
+              );
+            },
+          });
+        }
+
+        function cart_update(obj, key) {
+          $.ajax({
+            url: "https://www.idlord.xyz/index.php?route=checkout/cart/update",
+            type: "post",
+            data: { order_id: key, quantity: $("#quantity" + key).val() },
+            dataType: "json",
+            beforeSend: function () {
+              layer.load();
+            },
+            complete: function () {
+              layer.closeAll("loading");
+            },
+            success: function (json) {
+              console.log(json);
+              location.reload();
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+              alert(
+                thrownError +
+                  "\r\n" +
+                  xhr.statusText +
+                  "\r\n" +
+                  xhr.responseText
+              );
+            },
+          });
+        }
+
+        $('input[name = "shipping_method"]').click(function () {
+          if ("charge" == $(this).val()) {
+            return false;
+          } else {
+            $.ajax({
+              url: "https://www.idlord.xyz/index.php?route=checkout/confirm/charge",
+              type: "post",
+              data: "shipping_method=" + $(this).val(),
+              dataType: "json",
+              beforeSend: function () {
+                layer.load();
+              },
+              complete: function () {
+                layer.closeAll("loading");
+              },
+              success: function (json) {
+                console.log(json);
+                if (json.status == 1) {
+                  location.reload();
+                } else {
+                  layer.msg(
+                    "Free shipping only valid for US/CAN!",
+                    { time: 3000, icon: 4, skin: "demo" },
+                    function () {
+                      location.reload();
+                    }
+                  );
+                }
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                alert(
+                  thrownError +
+                    "\r\n" +
+                    xhr.statusText +
+                    "\r\n" +
+                    xhr.responseText
+                );
+              },
+            });
+          }
+        });
+
+        $("#coupons").click(function () {
+          $.ajax({
+            url: "/index.php?route=checkout/confirm/coupons",
+            type: "post",
+            data: "coupons_code=" + $("#coupons_code").val(),
+            dataType: "json",
+            beforeSend: function () {
+              layer.load();
+            },
+            complete: function () {
+              layer.closeAll("loading");
+            },
+            success: function (json) {
+              console.log(json);
+              if (json.code == 0) {
+                layer.msg("your coupon is not valid.");
+              } else {
+                location.reload();
+              }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+              alert(
+                thrownError +
+                  "\r\n" +
+                  xhr.statusText +
+                  "\r\n" +
+                  xhr.responseText
+              );
+            },
+          });
+        });
+      </script>
+      <script>
+        function add_more() {
+          parent.location = "/order";
+        }
+        function shipping_edit() {
+          parent.location = "/index.php?route=checkout/checkout&do=update";
+        }
+      </script>
+      <div class="widget-connect widget-connect-right">
+        <a
+          class="widget-connect__button button-slide-out widget-connect__button-telegram"
+          href="https://t.me/usiddean"
+          data-toggle="tooltip"
+          data-placement="left"
+          title="usiddean"
+          target="_blank"
+        ></a>
+        <a
+          class="widget-connect__button button-slide-out widget-connect__button-whatsapp"
+          href="https://wa.me/13474728713"
+          data-toggle="tooltip"
+          data-placement="left"
+          title="13474728713"
+          target="_blank"
+        ></a>
+        <a
+          class="widget-connect__button button-slide-out widget-connect__button-telephone"
+          href="tel:13474728713"
+          data-toggle="tooltip"
+          data-placement="left"
+          title="13474728713"
+          target="_blank"
+        ></a>
+        <a
+          class="widget-connect__button button-slide-out widget-connect__button-email"
+          href="mailto:order@idlord.xyz"
+          data-toggle="tooltip"
+          data-placement="left"
+          title="order@idlord.xyz"
+          target="_blank"
+        ></a>
+
+        <div
+          class="widget-connect__button-activator"
+          style="background-color: #cd4e37"
+        >
+          <div class="widget-connect__button-activator-icon"></div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        $(".widget-connect__button-activator-icon").click(function () {
+          $(this).toggleClass("active");
+          $(".widget-connect").toggleClass("active");
+          $("a.widget-connect__button").toggleClass(
+            "button-slide-out button-slide"
+          );
+        });
+      </script>
+
+      <footer>
+        <div class="grid-rows">
+          <div class="grid-row grid-row-2">
+            <div class="grid-cols">
+              <div class="grid-col grid-col-1">
+                <div class="grid-items">
+                  <div class="grid-item grid-item-1">
+                    <div
+                      class="module module-blocks module-blocks-257 blocks-grid"
+                    >
+                      <div class="module-body">
+                        <div class="module-item module-item-1 no-expand">
+                          <div class="block-body expand-block">
+                            <div class="block-header">
+                              <img
+                                src="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-200x232fill.png"
+                                srcset="
+                                  https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-200x232fill.png 1x,
+                                  https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-400x465fill.png 2x
+                                "
+                                alt=""
+                                width="200"
+                                height=""
+                                class="block-image"
+                              />
+                            </div>
+                            <div class="block-wrapper">
+                              <div class="block-content block-html">
+                                <p><b>&nbsp;</b></p>
+                                <p></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-col grid-col-2">
+                <div class="grid-items">
+                  <div class="grid-item grid-item-1">
+                    <div class="links-menu links-menu-75">
+                      <h3 class="title module-title">Customer Service</h3>
+                      <ul class="module-body">
+                        <li class="menu-item links-menu-item links-menu-item-1">
+                          <a href="/contact-us">
+                            <span class="links-text">Contact</span>
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-6">
+                          <a href="/faq">
+                            <span class="links-text">FAQ</span>
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-7">
+                          <a href="/terms">
+                            <span class="links-text">Terms & Conditions</span>
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-8">
+                          <a href="/shipping-and-delivery">
+                            <span class="links-text"
+                              >Shipping And Delivery</span
+                            >
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-9">
+                          <a href="https://www.idlord.xyz/privacy">
+                            <span class="links-text">Privacy Policy</span>
+                          </a>
+                        </li>
+
+                        <li
+                          class="menu-item links-menu-item links-menu-item-10"
+                        >
+                          <a href="refund-and-return-policy">
+                            <span class="links-text"
+                              >Refund and Return Policy</span
+                            >
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-col grid-col-3">
+                <div class="grid-items">
+                  <div class="grid-item grid-item-1">
+                    <div class="links-menu links-menu-76">
+                      <h3 class="title module-title">My Account</h3>
+                      <ul class="module-body">
+                        <li class="menu-item links-menu-item links-menu-item-1">
+                          <a
+                            href="https://www.idlord.xyz/index.php?route=account/account"
+                          >
+                            <span class="links-text">My Account</span>
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-2">
+                          <a
+                            href="https://www.idlord.xyz/index.php?route=account/order"
+                          >
+                            <span class="links-text">Order History</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-col grid-col-4">
+                <div class="grid-items">
+                  <div class="grid-item grid-item-1">
+                    <div class="links-menu links-menu-310">
+                      <h3 class="title module-title">CONTACT US</h3>
+                      <ul class="module-body">
+                        <li class="menu-item links-menu-item links-menu-item-1">
+                          <a>
+                            <span class="links-text"
+                              >Address：5651 MOSQUITO PASS DR, COLORADO SPRINGS,
+                              CO, UNITED STATES</span
+                            >
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-2">
+                          <a>
+                            <span class="links-text"
+                              >Phone：+1 347 472-8713</span
+                            >
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-3">
+                          <a>
+                            <span class="links-text"
+                              >Email：order@idlord.xyz</span
+                            >
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-4">
+                          <a>
+                            <span class="links-text">Telegram：@usiddean</span>
+                          </a>
+                        </li>
+
+                        <li class="menu-item links-menu-item links-menu-item-5">
+                          <a>
+                            <span class="links-text"
+                              >Whatsapp：+1 347 472-8713</span
+                            >
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-row grid-row-3">
+            <div class="grid-cols">
+              <div class="grid-col grid-col-1">
+                <div class="grid-items">
+                  <div class="grid-item grid-item-1">
+                    <div class="links-menu links-menu-77">
+                      <ul class="module-body">
+                        <li class="menu-item links-menu-item links-menu-item-1">
+                          <a>
+                            <span class="links-text"
+                              >Copyright © 2024, IDLORD.XYZ, All Rights
+                              Reserved</span
+                            >
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- .site-wrapper -->
+
+    <script src="catalog/view/theme/journal3/lib/anime/anime.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/vanilla-lazyload/lazyload.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/countdown/jquery.countdown.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/typeahead/typeahead.jquery.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/hoverintent/jquery.hoverIntent.min.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/lib/cjs/cjs.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/js/common.js?v=45643a14"></script>
+    <script src="catalog/view/theme/journal3/js/journal.js?v=45643a14"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".product-options select:last").prop("selectedIndex", 1);
+        var yz = $(".product-price").text();
+        yz = yz.split("$")[1];
+        $(".product-options select:last").on("change", function () {
+          var selectedText = $(this).find("option:selected").text();
+          var qu = selectedText.split("(")[0];
+          var jia = parseInt(qu) / 100;
+
+          var zz = parseInt(yz) * jia;
+          if (isNaN(zz)) {
+            zz = parseInt(yz);
+          }
+          $(".product-price").text("$" + zz.toFixed(2));
+          $(".product-tax").text("Ex Tax: $" + zz.toFixed(2));
+          console.log(qu);
+          console.log(zz);
+        });
+      });
+    </script>
+
+    <div class="scroll-top">
+      <i class="fa fa-angle-up"></i>
+    </div>
+    <style>
+      .jt-img {
+        position: fixed;
+        bottom: 0px;
+        transform: translate(-50%, -50%);
+        animation: bounce1 1.5s infinite;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 99;
+      }
+
+      @keyframes bounce1 {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media (max-width: 650px) {
+        .hidden-dm {
+          display: none !important;
+        }
+      }
+
+      @media (min-width: 650px) {
+        .hidden-sj {
+          display: none !important;
+        }
+      }
+    </style>
+    <img src="/image/catalog/jt.png" class="hidden-dm jt-img" />
+    <img src="/image/catalog/jt-sj.png" class="hidden-sj jt-img" />
+    <script>
+      window.onscroll = function () {
+        var bottomOfWindow =
+          document.documentElement.scrollTop + window.innerHeight;
+        var bottomOfDocument = document.documentElement.scrollHeight;
+
+        if (bottomOfWindow >= bottomOfDocument - 200) {
+          $(".jt-img").hide();
+        } else {
+          $(".jt-img").show();
+        }
+      };
+      $(".djs").click(function () {
+        location.href = "/order";
+      });
+    </script>
+    <style>
+      .widget-connect {
+        bottom: 93px;
+      }
+
+      .widget-connect-right2 {
+        width: 128px;
+        height: 40px;
+        background-image: url(/image/catalog/home/float.png?122333);
+        color: #444444;
+        line-height: 37px;
+        right: 75px;
+        bottom: 100px;
+        z-index: 999999;
+      }
+
+      .psmtc_dFeO2 {
+        width: 177px;
+        height: 40px;
+        background-image: url(/image/catalog/home/float.png?122333);
+        color: #444444;
+        line-height: 37px;
+        right: 52px;
+        bottom: 13px;
+        z-index: 999999;
+        position: absolute;
+        background-size: 100% 100%;
+        display: none;
+      }
+
+      .ps_rvm__hidden .psmtc_dFeO2 {
+        display: block;
+      }
+
+      @media (max-width: 470px) {
+        .psmtc_dFeO2 {
+          display: none !important;
+        }
+
+        .widget-connect-right2 {
+          right: 60px;
+        }
+      }
+    </style>
+    <div class="widget-connect widget-connect-right2">
+      <span style="margin-left: 15px">popular chat</span>
+    </div>
+    <div class="psmtc_dFeO">
+      <div class="psmtc_dFeO2">
+        <span style="margin-left: 15px">privacy online chat</span>
+      </div>
+    </div>
+  </body>
+</html>

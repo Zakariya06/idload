@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"
+  class="desktop win chrome chrome132 webkit oc30 is-guest route-checkout-checkout store-0 skin-1 desktop-header-active compact-sticky mobile-sticky no-currency no-cart no-wishlist no-compare layout-7"
+  data-jb="45643a14" data-jv="3.1.12" data-ov="3.0.3.8">
+
+<head >
+ 
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Checkout</title> 
+  <script>window['Journal'] = { "isPopup": false, "isPhone": false, "isTablet": false, "isDesktop": true, "filterScrollTop": false, "filterUrlValuesSeparator": ",", "countdownDay": "Day", "countdownHour": "Hour", "countdownMin": "Min", "countdownSec": "Sec", "globalPageColumnLeftTabletStatus": true, "globalPageColumnRightTabletStatus": true, "scrollTop": true, "scrollToTop": false, "notificationHideAfter": "2000", "quickviewPageStyleCloudZoomStatus": true, "quickviewPageStyleAdditionalImagesCarousel": false, "quickviewPageStyleAdditionalImagesCarouselStyleSpeed": "500", "quickviewPageStyleAdditionalImagesCarouselStyleAutoPlay": true, "quickviewPageStyleAdditionalImagesCarouselStylePauseOnHover": true, "quickviewPageStyleAdditionalImagesCarouselStyleDelay": "3000", "quickviewPageStyleAdditionalImagesCarouselStyleLoop": false, "quickviewPageStyleAdditionalImagesHeightAdjustment": "5", "quickviewPageStyleProductStockUpdate": false, "quickviewPageStylePriceUpdate": false, "quickviewPageStyleOptionsSelect": "none", "quickviewText": "Quickview", "mobileHeaderOn": "tablet", "subcategoriesCarouselStyleSpeed": "500", "subcategoriesCarouselStyleAutoPlay": false, "subcategoriesCarouselStylePauseOnHover": true, "subcategoriesCarouselStyleDelay": "3000", "subcategoriesCarouselStyleLoop": false, "productPageStyleCloudZoomStatus": true, "productPageStyleCloudZoomPosition": "inner", "productPageStyleAdditionalImagesCarousel": false, "productPageStyleAdditionalImagesCarouselStyleSpeed": "500", "productPageStyleAdditionalImagesCarouselStyleAutoPlay": true, "productPageStyleAdditionalImagesCarouselStylePauseOnHover": true, "productPageStyleAdditionalImagesCarouselStyleDelay": "3000", "productPageStyleAdditionalImagesCarouselStyleLoop": false, "productPageStyleAdditionalImagesHeightAdjustment": "5", "productPageStyleProductStockUpdate": false, "productPageStylePriceUpdate": false, "productPageStyleOptionsSelect": "none", "infiniteScrollStatus": true, "infiniteScrollOffset": "2", "infiniteScrollLoadPrev": "Load Previous Products", "infiniteScrollLoadNext": "Load Next Products", "infiniteScrollLoading": "Loading...", "infiniteScrollNoneLeft": "You have reached the end of the list.", "checkoutUrl": "https:\/\/www.idlord.xyz\/index.php?route=checkout\/checkout", "headerHeight": "", "headerCompactHeight": "", "mobileMenuOn": "", "searchStyleSearchAutoSuggestStatus": true, "searchStyleSearchAutoSuggestDescription": false, "searchStyleSearchAutoSuggestSubCategories": true, "headerMiniSearchDisplay": "default", "stickyStatus": true, "stickyFullHomePadding": true, "stickyFullwidth": true, "stickyAt": "", "stickyHeight": "40", "headerTopBarHeight": "0", "topBarStatus": true, "headerType": "compact", "headerMobileHeight": "60", "headerMobileStickyStatus": true, "headerMobileTopBarVisibility": false, "headerMobileTopBarHeight": "30", "columnsCount": 0 };</script>
+
+  <script>// forEach polyfill
+    if (window.NodeList && !NodeList.prototype.forEach) {
+      NodeList.prototype.forEach = Array.prototype.forEach;
+    }
+
+    (function () {
+      if (Journal['isPhone']) {
+        return;
+      }
+
+      var wrappers = ['search', 'cart', 'cart-content', 'logo', 'language', 'currency'];
+      var documentClassList = document.documentElement.classList;
+
+      function extractClassList() {
+        return ['desktop', 'tablet', 'phone', 'desktop-header-active', 'mobile-header-active', 'mobile-menu-active'].filter(function (cls) {
+          return documentClassList.contains(cls);
+        });
+      }
+
+      function mqr(mqls, listener) {
+        Object.keys(mqls).forEach(function (k) {
+          mqls[k].addListener(listener);
+        });
+
+        listener();
+      }
+
+      function mobileMenu() {
+        console.warn('mobile menu!');
+
+        var element = document.querySelector('#main-menu');
+        var wrapper = document.querySelector('.mobile-main-menu-wrapper');
+
+        if (element && wrapper) {
+          wrapper.appendChild(element);
+        }
+
+        var main_menu = document.querySelector('.main-menu');
+
+        if (main_menu) {
+          main_menu.classList.add('accordion-menu');
+        }
+
+        document.querySelectorAll('.main-menu .dropdown-toggle').forEach(function (element) {
+          element.classList.remove('dropdown-toggle');
+          element.classList.add('collapse-toggle');
+          element.removeAttribute('data-toggle');
+        });
+
+        document.querySelectorAll('.main-menu .dropdown-menu').forEach(function (element) {
+          element.classList.remove('dropdown-menu');
+          element.classList.remove('j-dropdown');
+          element.classList.add('collapse');
+        });
+      }
+
+      function desktopMenu() {
+        console.warn('desktop menu!');
+
+        var element = document.querySelector('#main-menu');
+        var wrapper = document.querySelector('.desktop-main-menu-wrapper');
+
+        if (element && wrapper) {
+          wrapper.insertBefore(element, document.querySelector('#main-menu-2'));
+        }
+
+        var main_menu = document.querySelector('.main-menu');
+
+        if (main_menu) {
+          main_menu.classList.remove('accordion-menu');
+        }
+
+        document.querySelectorAll('.main-menu .collapse-toggle').forEach(function (element) {
+          element.classList.add('dropdown-toggle');
+          element.classList.remove('collapse-toggle');
+          element.setAttribute('data-toggle', 'dropdown');
+        });
+
+        document.querySelectorAll('.main-menu .collapse').forEach(function (element) {
+          element.classList.add('dropdown-menu');
+          element.classList.add('j-dropdown');
+          element.classList.remove('collapse');
+        });
+
+        document.body.classList.remove('mobile-wrapper-open');
+      }
+
+      function mobileHeader() {
+        console.warn('mobile header!');
+
+        Object.keys(wrappers).forEach(function (k) {
+          var element = document.querySelector('#' + wrappers[k]);
+          var wrapper = document.querySelector('.mobile-' + wrappers[k] + '-wrapper');
+
+          if (element && wrapper) {
+            wrapper.appendChild(element);
+          }
+
+          if (wrappers[k] === 'cart-content') {
+            if (element) {
+              element.classList.remove('j-dropdown');
+              element.classList.remove('dropdown-menu');
+            }
+          }
+        });
+
+        var search = document.querySelector('#search');
+        var cart = document.querySelector('#cart');
+
+        if (search && (Journal['searchStyle'] === 'full')) {
+          search.classList.remove('full-search');
+          search.classList.add('mini-search');
+        }
+
+        if (cart && (Journal['cartStyle'] === 'full')) {
+          cart.classList.remove('full-cart');
+          cart.classList.add('mini-cart')
+        }
+      }
+
+      function desktopHeader() {
+        console.warn('desktop header!');
+
+        Object.keys(wrappers).forEach(function (k) {
+          var element = document.querySelector('#' + wrappers[k]);
+          var wrapper = document.querySelector('.desktop-' + wrappers[k] + '-wrapper');
+
+          if (wrappers[k] === 'cart-content') {
+            if (element) {
+              element.classList.add('j-dropdown');
+              element.classList.add('dropdown-menu');
+              document.querySelector('#cart').appendChild(element);
+            }
+          } else {
+            if (element && wrapper) {
+              wrapper.appendChild(element);
+            }
+          }
+        });
+
+        var search = document.querySelector('#search');
+        var cart = document.querySelector('#cart');
+
+        if (search && (Journal['searchStyle'] === 'full')) {
+          search.classList.remove('mini-search');
+          search.classList.add('full-search');
+        }
+
+        if (cart && (Journal['cartStyle'] === 'full')) {
+          cart.classList.remove('mini-cart');
+          cart.classList.add('full-cart');
+        }
+
+        documentClassList.remove('mobile-cart-content-container-open');
+        documentClassList.remove('mobile-main-menu-container-open');
+        documentClassList.remove('mobile-overlay');
+      }
+
+      function moveElements(classList) {
+        if (classList.includes('mobile-header-active')) {
+          mobileHeader();
+          mobileMenu();
+        } else if (classList.includes('mobile-menu-active')) {
+          desktopHeader();
+          mobileMenu();
+        } else {
+          desktopHeader();
+          desktopMenu();
+        }
+      }
+
+      var mqls = {
+        phone: window.matchMedia('(max-width: 768px)'),
+        tablet: window.matchMedia('(max-width: 1024px)'),
+        menu: window.matchMedia('(max-width: ' + Journal['mobileMenuOn'] + 'px)')
+      };
+
+      mqr(mqls, function () {
+        var oldClassList = extractClassList();
+
+        if (Journal['isDesktop']) {
+          if (mqls.phone.matches) {
+            documentClassList.remove('desktop');
+            documentClassList.remove('tablet');
+            documentClassList.add('mobile');
+            documentClassList.add('phone');
+          } else if (mqls.tablet.matches) {
+            documentClassList.remove('desktop');
+            documentClassList.remove('phone');
+            documentClassList.add('mobile');
+            documentClassList.add('tablet');
+          } else {
+            documentClassList.remove('mobile');
+            documentClassList.remove('phone');
+            documentClassList.remove('tablet');
+            documentClassList.add('desktop');
+          }
+
+          if (documentClassList.contains('phone') || (documentClassList.contains('tablet') && Journal['mobileHeaderOn'] === 'tablet')) {
+            documentClassList.remove('desktop-header-active');
+            documentClassList.add('mobile-header-active');
+          } else {
+            documentClassList.remove('mobile-header-active');
+            documentClassList.add('desktop-header-active');
+          }
+        }
+
+        if (documentClassList.contains('desktop-header-active') && mqls.menu.matches) {
+          documentClassList.add('mobile-menu-active');
+        } else {
+          documentClassList.remove('mobile-menu-active');
+        }
+
+        var newClassList = extractClassList();
+
+        if (oldClassList.join(' ') !== newClassList.join(' ')) {
+          if (documentClassList.contains('safari') && !documentClassList.contains('ipad') && navigator.maxTouchPoints && navigator.maxTouchPoints > 2) {
+            window.fetch('index.php?route=journal3/journal3/device_detect', {
+              method: 'POST',
+              body: 'device=ipad',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              }
+            }).then(function (data) {
+              return data.json();
+            }).then(function (data) {
+              if (data.response.reload) {
+                window.location.reload();
+              }
+            });
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function () {
+              moveElements(newClassList);
+            });
+          } else {
+            moveElements(newClassList);
+          }
+        }
+      });
+
+    })();
+
+    (function () {
+      var cookies = {};
+      var style = document.createElement('style');
+      var documentClassList = document.documentElement.classList;
+
+      document.head.appendChild(style);
+
+      document.cookie.split('; ').forEach(function (c) {
+        var cc = c.split('=');
+        cookies[cc[0]] = cc[1];
+      });
+
+      if (Journal['popup']) {
+        for (var i in Journal['popup']) {
+          if (!cookies['p-' + Journal['popup'][i]['c']]) {
+            documentClassList.add('popup-open');
+            documentClassList.add('popup-center');
+            break;
+          }
+        }
+      }
+
+      if (Journal['notification']) {
+        for (var i in Journal['notification']) {
+          if (cookies['n-' + Journal['notification'][i]['c']]) {
+            style.sheet.insertRule('.module-notification-' + Journal['notification'][i]['m'] + '{ display:none }');
+          }
+        }
+      }
+
+      if (Journal['headerNotice']) {
+        for (var i in Journal['headerNotice']) {
+          if (cookies['hn-' + Journal['headerNotice'][i]['c']]) {
+            style.sheet.insertRule('.module-header_notice-' + Journal['headerNotice'][i]['m'] + '{ display:none }');
+          }
+        }
+      }
+
+      if (Journal['layoutNotice']) {
+        for (var i in Journal['layoutNotice']) {
+          if (cookies['ln-' + Journal['layoutNotice'][i]['c']]) {
+            style.sheet.insertRule('.module-layout_notice-' + Journal['layoutNotice'][i]['m'] + '{ display:none }');
+          }
+        }
+      }
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700%7CPoppins:700&amp;subset=latin-ext" type="text/css"
+    rel="stylesheet" />
+  <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css?v=45643a14" type="text/css" rel="stylesheet"
+    media="all" />
+  <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css?v=45643a14" type="text/css" rel="stylesheet"
+    media="all" />
+  <link href="catalog/view/theme/journal3/stylesheet/style.min.css?v=45643a14" type="text/css" rel="stylesheet"
+    media="all" />
+  <link href="catalog/view/theme/default/stylesheet/widget-multi-connect-v09.css?v=45643a14" type="text/css"
+    rel="stylesheet" media="all" />
+  <link href="catalog/view/javascript/reviewpro/magnific-popup.css?v=45643a14" type="text/css" rel="stylesheet"
+    media="all" />
+  <link href="catalog/view/javascript/reviewpro/star-rating.min.css?v=45643a14" type="text/css" rel="stylesheet"
+    media="all" />
+  <link href="catalog/view/javascript/reviewpro/style.css?v=45643a14" type="text/css" rel="stylesheet" media="all" />
+  <link href="https://www.idlord.xyz/index.php?route=checkout/checkout" rel="canonical" />
+  <link href="https://www.idlord.xyz/image/catalog/9c73a5f313a3d8e7f2088b9def96527.png" rel="icon" />
+  
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/countdown.css">
+  
+
+  <script src="catalog/view/theme/journal3/lib/modernizr/modernizr-custom.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/lib/jquery/jquery-2.1.1.min.js?v=45643a14"></script>
+  <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js?v=45643a14"></script>
+  <script src="catalog/view/javascript/common.js?v=45643a14"></script>
+  <script src="catalog/view/javascript/layer/layer.js?v=45643a14"></script>
+  <script src="catalog/view/javascript/googlemaps/google_api_autocomplete.js?&v=45643a14"></script>
+  <script src="catalog/view/javascript/reviewpro/jquery.cookie.min.js?v=45643a14"></script>
+  <script src="catalog/view/javascript/reviewpro/jquery.magnific-popup.min.js?v=45643a14"></script>
+  <script src="catalog/view/javascript/reviewpro/star-rating.min.js?v=45643a14"></script>
+</head>
+
+<body class=""> 
+
+  <div class="djs" style="display: none;">
+    <div style="display: flex;max-width: 1200px;margin: auto;flex-wrap: wrap;">
+      <div class="djs-12">
+      </div>
+      <div class="djs-1">
+        <div class="djs_bt">TIME REMAINING</div>
+        <div id="countdown-3" style="display: contents;"></div>
+        <div style="margin-top: 8px"><a href="/order"><img src="/image/catalog/home/anniu.png"></a></div>
+      </div>
+    </div>
+
+  </div>
+  
+ 
+  <div class="mobile-container mobile-main-menu-container">
+    <div class="mobile-wrapper-header">
+      <span>Menu</span>
+      <div class="language-currency top-menu">
+        <div class="mobile-currency-wrapper">
+
+        </div>
+        <div class="mobile-language-wrapper">
+
+        </div>
+      </div>
+      <a class="x"></a>
+    </div>
+    <div class="mobile-main-menu-wrapper">
+
+    </div>
+  </div>
+
+  <div class="mobile-container mobile-filter-container">
+    <div class="mobile-wrapper-header"></div>
+    <div class="mobile-filter-wrapper"></div>
+  </div>
+
+  <div class="mobile-container mobile-cart-content-container">
+    <div class="mobile-wrapper-header">
+      <span>Your Cart</span>
+      <a class="x"></a>
+    </div>
+    <div class="mobile-cart-content-wrapper cart-content"></div>
+  </div>
+ 
+  <div class="site-wrapper">
+ 
+    <header class="header-compact">
+      <div class="header header-compact header-sm">
+        <div class="top-bar navbar-nav">
+          <div class="language-currency top-menu">
+            <div class="desktop-language-wrapper"></div>
+            <div class="desktop-currency-wrapper"></div>
+          </div>
+          <div class="third-menu"></div>
+        </div>
+        <div class="mid-bar navbar-nav">
+          <div class="desktop-logo-wrapper">
+            <div id="logo">
+              <a href="./index.html">
+                <img
+                  src="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png"
+                  srcset="
+                    https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png 1x,
+                    https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-535x622.png 2x
+                  "
+                  width="535"
+                  height="622"
+                  alt="idlord.xyz logo"
+                  title="fake id vendor idlord logo"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="desktop-main-menu-wrapper navbar-nav">
+            <div class="menu-trigger menu-item main-menu-item">
+              <ul class="j-menu">
+                <li><a>Menu</a></li>
+              </ul>
+            </div>
+            <div id="main-menu" class="main-menu main-menu-3">
+              <ul class="j-menu">
+                <li
+                  class="menu-item main-menu-item main-menu-item-1 multi-level drop-menu"
+                >
+                  <a href="./index.html">
+                    <span class="links-text">Home</span>
+                  </a>
+                </li> 
+                <li
+                  class="menu-item main-menu-item main-menu-item-9 multi-level drop-menu"
+                >
+                  <a href="/order.html">
+                    <span class="links-text">Order</span>
+                  </a>
+                </li>  
+                <li
+                  class="menu-item main-menu-item main-menu-item-15 multi-level drop-menu"
+                >
+                  <a href="/contact-us.html">
+                    <span class="links-text">Contact Us</span>
+                  </a>
+                </li>  
+              </ul>
+            </div>
+          </div>
+
+          <div class="header-cart-group">
+            <div class="top-menu secondary-menu">
+              <div class="top-menu top-menu-270">
+                <ul class="j-menu">
+                  <li class="menu-item top-menu-item top-menu-item-1">
+                    <a href="/account"><span class="links-text"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="desktop-search-wrapper mini-search">
+              <div id="search" class="dropdown">
+                <button
+                  class="dropdown-toggle search-trigger"
+                  data-toggle="dropdown"
+                ></button>
+                <div class="dropdown-menu j-dropdown">
+                  <div class="header-search">
+                    <div class="search-categories dropdown drop-menu">
+                      <div
+                        class="search-categories-button dropdown-toggle"
+                        data-toggle="dropdown"
+                      >
+                        All
+                      </div>
+
+                      <div class="dropdown-menu j-dropdown">
+                        <ul class="j-menu">
+                          <li data-category_id="0" class="category-level-1">
+                            <a>All</a>
+                          </li>
+                          <li data-category_id="226" class="category-level-1">
+                            <a>US State IDs</a>
+                          </li>
+
+                          <li data-category_id="227" class="category-level-1">
+                            <a>Canada IDs</a>
+                          </li>
+
+                          <li data-category_id="228" class="category-level-1">
+                            <a>SSN Card</a>
+                          </li>
+
+                          <li data-category_id="230" class="category-level-1">
+                            <a>EAD Card</a>
+                          </li>
+
+                          <li data-category_id="229" class="category-level-1">
+                            <a>PR Card</a>
+                          </li>
+
+                          <li data-category_id="232" class="category-level-1">
+                            <a>PR SSN EAD SERIES</a>
+                          </li>
+
+                          <li data-category_id="231" class="category-level-1">
+                            <a>Handicap Parking Permit</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <input
+                      type="text"
+                      name="search"
+                      value=""
+                      placeholder="Search for products..."
+                      class="search-input"
+                      data-category_id="0"
+                    />
+                    <button
+                      type="button"
+                      class="search-button" 
+                    ></button>
+                  </div>
+                  <style>
+                    .aa:before {
+                      content: "\e99a" !important;
+                      font-family: icomoon !important;
+                      font-size: 13px;
+                      color: red;
+                    }
+                  </style> 
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-header mobile-default mobile-1">
+        <div class="mobile-top-bar">
+          <div class="mobile-top-menu-wrapper">
+            <div class="top-menu top-menu-270">
+              <ul class="j-menu">
+                <li class="menu-item top-menu-item top-menu-item-1">
+                  <a href="/account"><span class="links-text"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-bar sticky-bar">
+          <div class="mobile-logo-wrapper"></div>
+          <div class="mobile-bar-group">
+            <div class="menu-trigger"></div>
+            <div class="mobile-top-menu-wrapper">
+              <div class="top-menu top-menu-270">
+                <ul class="j-menu">
+                  <li class="menu-item top-menu-item top-menu-item-1">
+                    <a href="/account"><span class="links-text"></span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="mobile-search-wrapper mini-search"></div>
+            <div class="mobile-cart-wrapper mini-cart"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+ 
+    <link href="catalog/view/javascript/waitme/waitMe.min.css" rel="stylesheet" media="screen" />
+    <script src="catalog/view/javascript/waitme/waitMe.min.js" type="text/javascript"></script>
+    <style>
+      body {
+        background: #ffffff;
+      }
+
+      .content-title {
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      div.required .content-title:before {
+        content: '* ';
+        color: #F00;
+        font-weight: bold;
+      }
+
+      select.form-control,
+      input.form-control {
+        max-width: 100%;
+      }
+
+      .col-sm-12 {
+        width: 100%;
+      }
+    </style>
+    <div class="container">
+      <div class="">
+        <!--<h2 class="text-center" style="font-size: 30px;">Shipping Address</h2>-->
+        <form id="form-shipping" enctype="multipart/form-data" autocomplete="off">
+          <div class="col-xs-12">
+            <img src="/image/catalog/picture/shipping.png?23b" width="100%" class="hidden-xs hidden-sm">
+            <img src="/image/catalog/picture/shipping2.png?3b" width="100%" class="hidden-md hidden-lg">
+          </div>
+          <p style="font-size:16px;text-align:center;margin-bottom:10px;font-weight:bold;">
+            Step2: Delivery Address
+          </p>
+          <div class="col-sm-1 hidden-xs"></div>
+          <div id="content" class="col-sm-10 col-xs-12">
+            <p style="display:none;">NOTE: please enter your full shipping address including your apt number or suite
+              number. if the parcel gets returned due to your address being incomplete, you will have to pay half of The
+              order price for us to remake The id and send it again, because for international shipments returning to
+              sender means they will be destroyed by the shipping carrier, they never actually get returned to us.</p>
+            <div class="form-horizontal">
+              <div class="form-group hidden">
+                <label class="col-sm-2 control-label" for="input-shipping-company">Company</label>
+                <div class="col-sm-10">
+                  <input type="text" name="company" value="" placeholder="Company" id="input-shipping-company"
+                    class="form-control" />
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-12 content-title" for="input-shipping-country">Country/Region</label>
+                <div class="col-sm-12">
+                  <select name="country_id" id="input-shipping-country" class="form-control">
+                    <option value="244">Aaland Islands</option>
+                    <option value="1">Afghanistan</option>
+                    <option value="2">Albania</option>
+                    <option value="3">Algeria</option>
+                    <option value="4">American Samoa</option>
+                    <option value="5">Andorra</option>
+                    <option value="6">Angola</option>
+                    <option value="7">Anguilla</option>
+                    <option value="8">Antarctica</option>
+                    <option value="9">Antigua and Barbuda</option>
+                    <option value="10">Argentina</option>
+                    <option value="11">Armenia</option>
+                    <option value="12">Aruba</option>
+                    <option value="252">Ascension Island (British)</option>
+                    <option value="13">Australia</option>
+                    <option value="14">Austria</option>
+                    <option value="15">Azerbaijan</option>
+                    <option value="16">Bahamas</option>
+                    <option value="17">Bahrain</option>
+                    <option value="18">Bangladesh</option>
+                    <option value="19">Barbados</option>
+                    <option value="20">Belarus</option>
+                    <option value="21">Belgium</option>
+                    <option value="22">Belize</option>
+                    <option value="23">Benin</option>
+                    <option value="24">Bermuda</option>
+                    <option value="25">Bhutan</option>
+                    <option value="26">Bolivia</option>
+                    <option value="245">Bonaire, Sint Eustatius and Saba</option>
+                    <option value="27">Bosnia and Herzegovina</option>
+                    <option value="28">Botswana</option>
+                    <option value="29">Bouvet Island</option>
+                    <option value="30">Brazil</option>
+                    <option value="31">British Indian Ocean Territory</option>
+                    <option value="32">Brunei Darussalam</option>
+                    <option value="33">Bulgaria</option>
+                    <option value="34">Burkina Faso</option>
+                    <option value="35">Burundi</option>
+                    <option value="36">Cambodia</option>
+                    <option value="37">Cameroon</option>
+                    <option value="38">Canada</option>
+                    <option value="251">Canary Islands</option>
+                    <option value="39">Cape Verde</option>
+                    <option value="40">Cayman Islands</option>
+                    <option value="41">Central African Republic</option>
+                    <option value="42">Chad</option>
+                    <option value="43">Chile</option>
+                    <option value="44">China</option>
+                    <option value="45">Christmas Island</option>
+                    <option value="46">Cocos (Keeling) Islands</option>
+                    <option value="47">Colombia</option>
+                    <option value="48">Comoros</option>
+                    <option value="49">Congo</option>
+                    <option value="50">Cook Islands</option>
+                    <option value="51">Costa Rica</option>
+                    <option value="52">Cote D'Ivoire</option>
+                    <option value="53">Croatia</option>
+                    <option value="54">Cuba</option>
+                    <option value="246">Curacao</option>
+                    <option value="55">Cyprus</option>
+                    <option value="56">Czech Republic</option>
+                    <option value="237">Democratic Republic of Congo</option>
+                    <option value="57">Denmark</option>
+                    <option value="58">Djibouti</option>
+                    <option value="59">Dominica</option>
+                    <option value="60">Dominican Republic</option>
+                    <option value="61">East Timor</option>
+                    <option value="62">Ecuador</option>
+                    <option value="63">Egypt</option>
+                    <option value="64">El Salvador</option>
+                    <option value="65">Equatorial Guinea</option>
+                    <option value="66">Eritrea</option>
+                    <option value="67">Estonia</option>
+                    <option value="68">Ethiopia</option>
+                    <option value="69">Falkland Islands (Malvinas)</option>
+                    <option value="70">Faroe Islands</option>
+                    <option value="71">Fiji</option>
+                    <option value="72">Finland</option>
+                    <option value="74">France, Metropolitan</option>
+                    <option value="75">French Guiana</option>
+                    <option value="76">French Polynesia</option>
+                    <option value="77">French Southern Territories</option>
+                    <option value="126">FYROM</option>
+                    <option value="78">Gabon</option>
+                    <option value="79">Gambia</option>
+                    <option value="80">Georgia</option>
+                    <option value="81">Germany</option>
+                    <option value="82">Ghana</option>
+                    <option value="83">Gibraltar</option>
+                    <option value="84">Greece</option>
+                    <option value="85">Greenland</option>
+                    <option value="86">Grenada</option>
+                    <option value="87">Guadeloupe</option>
+                    <option value="88">Guam</option>
+                    <option value="89">Guatemala</option>
+                    <option value="256">Guernsey</option>
+                    <option value="90">Guinea</option>
+                    <option value="91">Guinea-Bissau</option>
+                    <option value="92">Guyana</option>
+                    <option value="93">Haiti</option>
+                    <option value="94">Heard and Mc Donald Islands</option>
+                    <option value="95">Honduras</option>
+                    <option value="96">Hong Kong</option>
+                    <option value="97">Hungary</option>
+                    <option value="98">Iceland</option>
+                    <option value="99">India</option>
+                    <option value="100">Indonesia</option>
+                    <option value="101">Iran (Islamic Republic of)</option>
+                    <option value="102">Iraq</option>
+                    <option value="103">Ireland</option>
+                    <option value="254">Isle of Man</option>
+                    <option value="104">Israel</option>
+                    <option value="105">Italy</option>
+                    <option value="106">Jamaica</option>
+                    <option value="107">Japan</option>
+                    <option value="257">Jersey</option>
+                    <option value="108">Jordan</option>
+                    <option value="109">Kazakhstan</option>
+                    <option value="110">Kenya</option>
+                    <option value="111">Kiribati</option>
+                    <option value="253">Kosovo, Republic of</option>
+                    <option value="114">Kuwait</option>
+                    <option value="115">Kyrgyzstan</option>
+                    <option value="116">Lao People's Democratic Republic</option>
+                    <option value="117">Latvia</option>
+                    <option value="118">Lebanon</option>
+                    <option value="119">Lesotho</option>
+                    <option value="120">Liberia</option>
+                    <option value="121">Libyan Arab Jamahiriya</option>
+                    <option value="122">Liechtenstein</option>
+                    <option value="123">Lithuania</option>
+                    <option value="124">Luxembourg</option>
+                    <option value="125">Macau</option>
+                    <option value="127">Madagascar</option>
+                    <option value="128">Malawi</option>
+                    <option value="129">Malaysia</option>
+                    <option value="130">Maldives</option>
+                    <option value="131">Mali</option>
+                    <option value="132">Malta</option>
+                    <option value="133">Marshall Islands</option>
+                    <option value="134">Martinique</option>
+                    <option value="135">Mauritania</option>
+                    <option value="136">Mauritius</option>
+                    <option value="137">Mayotte</option>
+                    <option value="138">Mexico</option>
+                    <option value="139">Micronesia, Federated States of</option>
+                    <option value="140">Moldova, Republic of</option>
+                    <option value="141">Monaco</option>
+                    <option value="142">Mongolia</option>
+                    <option value="242">Montenegro</option>
+                    <option value="143">Montserrat</option>
+                    <option value="144">Morocco</option>
+                    <option value="145">Mozambique</option>
+                    <option value="146">Myanmar</option>
+                    <option value="147">Namibia</option>
+                    <option value="148">Nauru</option>
+                    <option value="149">Nepal</option>
+                    <option value="150">Netherlands</option>
+                    <option value="151">Netherlands Antilles</option>
+                    <option value="152">New Caledonia</option>
+                    <option value="153">New Zealand</option>
+                    <option value="154">Nicaragua</option>
+                    <option value="155">Niger</option>
+                    <option value="156">Nigeria</option>
+                    <option value="157">Niue</option>
+                    <option value="158">Norfolk Island</option>
+                    <option value="112">North Korea</option>
+                    <option value="159">Northern Mariana Islands</option>
+                    <option value="160">Norway</option>
+                    <option value="161">Oman</option>
+                    <option value="162">Pakistan</option>
+                    <option value="163">Palau</option>
+                    <option value="247">Palestinian Territory, Occupied</option>
+                    <option value="164">Panama</option>
+                    <option value="165">Papua New Guinea</option>
+                    <option value="166">Paraguay</option>
+                    <option value="167">Peru</option>
+                    <option value="168">Philippines</option>
+                    <option value="169">Pitcairn</option>
+                    <option value="170">Poland</option>
+                    <option value="171">Portugal</option>
+                    <option value="172">Puerto Rico</option>
+                    <option value="173">Qatar</option>
+                    <option value="174">Reunion</option>
+                    <option value="175">Romania</option>
+                    <option value="176">Russian Federation</option>
+                    <option value="177">Rwanda</option>
+                    <option value="178">Saint Kitts and Nevis</option>
+                    <option value="179">Saint Lucia</option>
+                    <option value="180">Saint Vincent and the Grenadines</option>
+                    <option value="181">Samoa</option>
+                    <option value="182">San Marino</option>
+                    <option value="183">Sao Tome and Principe</option>
+                    <option value="184">Saudi Arabia</option>
+                    <option value="185">Senegal</option>
+                    <option value="243">Serbia</option>
+                    <option value="186">Seychelles</option>
+                    <option value="187">Sierra Leone</option>
+                    <option value="188">Singapore</option>
+                    <option value="189">Slovak Republic</option>
+                    <option value="190">Slovenia</option>
+                    <option value="191">Solomon Islands</option>
+                    <option value="192">Somalia</option>
+                    <option value="193">South Africa</option>
+                    <option value="194">South Georgia &amp; South Sandwich Islands</option>
+                    <option value="113">South Korea</option>
+                    <option value="248">South Sudan</option>
+                    <option value="195">Spain</option>
+                    <option value="196">Sri Lanka</option>
+                    <option value="249">St. Barthelemy</option>
+                    <option value="197">St. Helena</option>
+                    <option value="250">St. Martin (French part)</option>
+                    <option value="198">St. Pierre and Miquelon</option>
+                    <option value="199">Sudan</option>
+                    <option value="200">Suriname</option>
+                    <option value="201">Svalbard and Jan Mayen Islands</option>
+                    <option value="202">Swaziland</option>
+                    <option value="203">Sweden</option>
+                    <option value="204">Switzerland</option>
+                    <option value="205">Syrian Arab Republic</option>
+                    <option value="206">Taiwan</option>
+                    <option value="207">Tajikistan</option>
+                    <option value="208">Tanzania, United Republic of</option>
+                    <option value="209">Thailand</option>
+                    <option value="210">Togo</option>
+                    <option value="211">Tokelau</option>
+                    <option value="212">Tonga</option>
+                    <option value="213">Trinidad and Tobago</option>
+                    <option value="255">Tristan da Cunha</option>
+                    <option value="214">Tunisia</option>
+                    <option value="215">Turkey</option>
+                    <option value="216">Turkmenistan</option>
+                    <option value="217">Turks and Caicos Islands</option>
+                    <option value="218">Tuvalu</option>
+                    <option value="219">Uganda</option>
+                    <option value="220">Ukraine</option>
+                    <option value="221">United Arab Emirates</option>
+                    <option value="222" selected="selected">United Kingdom</option>
+                    <option value="223">United States</option>
+                    <option value="224">United States Minor Outlying Islands</option>
+                    <option value="225">Uruguay</option>
+                    <option value="226">Uzbekistan</option>
+                    <option value="227">Vanuatu</option>
+                    <option value="228">Vatican City State (Holy See)</option>
+                    <option value="229">Venezuela</option>
+                    <option value="230">Viet Nam</option>
+                    <option value="231">Virgin Islands (British)</option>
+                    <option value="232">Virgin Islands (U.S.)</option>
+                    <option value="233">Wallis and Futuna Islands</option>
+                    <option value="234">Western Sahara</option>
+                    <option value="235">Yemen</option>
+                    <option value="238">Zambia</option>
+                    <option value="239">Zimbabwe</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-12 content-title" for="input-shipping-firstname">First Name</label>
+                <div class="col-sm-12">
+                  <input type="text" name="firstname" value="" placeholder="First Name (For Your Delivery)"
+                    id="input-shipping-firstname" class="form-control" autocomplete="new" />
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-12 content-title" for="input-shipping-lastname">Last Name</label>
+                <div class="col-sm-12">
+                  <input type="text" name="lastname" value="" placeholder="Last Name (For Your Delivery)"
+                    id="input-shipping-lastname" class="form-control" autocomplete="new" />
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-12 content-title" for="input-shipping-phone">Phone Number</label>
+                <div class="col-sm-12">
+                  <input type="text" name="phone" value="" placeholder="Phone Number (For Your Delivery)"
+                    id="input-shipping-phone" class="form-control" autocomplete="new" />
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-12 content-title" for="input-shipping-address">Address<font color='red' class="">
+                    (only send apt #, PO Box invalid)</font></label>
+                <div class="col-sm-12">
+                  <input type="text" name="address" value=""
+                    placeholder="Select the best-fit address as you type (For Your Delivery)"
+                    id="input-shipping-address" class="form-control" autocomplete="new" />
+                </div>
+                <div class="col-sm-12 hidden" style="margin-top:10px;">
+                  <input type="text" name="address2" value="" placeholder="Apt#, floor#, if any"
+                    id="input-shipping-address2" class="form-control" autocomplete="new" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                  <div class="form-group required">
+                    <label class="col-sm-12 content-title" for="input-shipping-city">City</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="city" value="" placeholder="City (For Your Delivery)"
+                        id="input-shipping-city" class="form-control" autocomplete="new" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                  <div class="form-group required">
+                    <label class="col-sm-12 content-title" for="input-shipping-zone">State</label>
+                    <div class="col-sm-12">
+                      <select name="zone_id" id="input-shipping-zone" class="form-control">
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xs-6">
+                  <div class="form-group required">
+                    <label class="col-sm-12 content-title" for="input-shipping-postcode">ZIP Code</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="postcode" value="" placeholder="ZIP Code (For Your Delivery)"
+                        id="input-shipping-postcode" class="form-control" autocomplete="new" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group required hidden">
+                <label class="col-sm-2 control-label" for="input-shipping-email">Email Address</label>
+                <div class="col-sm-10">
+                  <input type="text" name="email" value="medada@dada.com" placeholder="Email Address"
+                    id="input-shipping-email" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group required hidden">
+                <label class="col-sm-2 control-label" for="input-shipping-method">Shipping Method</label>
+                <div class="col-sm-10">
+                  <select name="shipping_method" id="input-shipping-method" class="form-control">
+                    <option value="charge" selected="selected">DHL Express Shipping</option>
+                    <!--										<option value="free">Free shipping</option>
+																				<option value="charge">Priority Shipping: $70.00</option>
+										-->
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1 hidden-xs"></div>
+            <div class="row hidden" style="list-style:none;">
+              <div class="col-xs-12" style="font-size:16px;margin-bottom:10px;font-weight:bold;margin-top: 20px;">
+                Payment Method Select</div>
+              <div class="col-xs-12 hidden" style="margin:10px 0;">
+                <div style="float:left;" class="payment-item">
+                  <input style="float:left; margin-top:15px;margin-right:15px;" id="payment_method_airwallex"
+                    type="radio" class="input-radio" name="payment_method" value="airwallex" />
+                  <label for="payment_method_airwallex">
+                    <img src="/image/catalog/picture/paymethod-airwallex.png" id="paypal" class="payment-logo">
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-xs-12" style="margin:10px 0;">
+                <div style="float:left;" class="payment-item">
+                  <input style="float:left; margin-top:10px;margin-right:3px;" id="payment_method_stripe" type="radio"
+                    class="input-radio" name="payment_method" value="stripe" checked="checked" />
+                  <label for="payment_method_stripe">
+                    <img src="/image/catalog/picture/paymethod-stripe2.png?1" id="paypal" style="width:270px;"
+                      class="payment-logo">
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-xs-12 hidden" style="margin:10px 0;">
+                <div style="float:left;" class="payment-item">
+                  <input style="float:left; margin-top:15px;margin-right:15px;" id="payment_method_paypal" type="radio"
+                    class="input-radio" name="payment_method" value="paypal" />
+                  <label for="payment_method_paypal">
+                    <img src="/image/catalog/picture/paymethod-pp4.png" id="paypal" style="width:104px;"
+                      class="payment-logo">
+                  </label>
+                </div>
+                <div style="margin-top:15px;clear:both;display:none;">
+                  10% surcharge due to tight transaction control.
+                </div>
+              </div>
+              <div class="col-xs-12" style="margin:10px 0;">
+                <div style="float:left;" class="payment-item">
+                  <input style="float:left; margin-top:10px;margin-right:3px;" id="payment_method_bitcoin" type="radio"
+                    class="input-radio" name="payment_method" value="bitcoin" />
+                  <label for="payment_method_bitcoin">
+                    <img src="/image/catalog/picture/paymethod-bc4.png" id="bitcoin" style="height:30px;"
+                      class="payment-logo">
+                  </label>
+                </div>
+                <div style="margin-top:15px;clear:both;color:red;font-weight:bold;margin-left:30px;display:none;">
+                  10% Dicount
+                </div>
+              </div>
+
+              <div class="col-xs-12 hidden" style="margin:10px 0;">
+                <div style="float:left;" class="payment-item">
+                  <input style="float:left; margin-top:15px;margin-right:15px;" id="payment_method_westernunion"
+                    type="radio" class="input-radio" name="payment_method" value="westernunion" />
+                  <label for="payment_method_westernunion">
+                    <img src="/image/catalog/picture/paymethod-wu4.png" id="westernunion" style="width:199px;"
+                      class="payment-logo">
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-12 hidden" style="margin:10px 0;">
+                <div style="float:left;" class="payment-item">
+                  <input style="float:left; margin-top:15px;margin-right:15px;" id="payment_method_banktransfer"
+                    type="radio" class="input-radio" name="payment_method" value="banktransfer" />
+                  <label for="payment_method_banktransfer">
+                    <img src="/image/catalog/picture/paymethod-bt4.png" id="banktransfer" style="width:150px;"
+                      class="payment-logo">
+                  </label>
+                </div>
+                <br />
+              </div>
+
+              <div class="col-xs-12 hidden" style="margin:10px 0;">
+                <div>
+                  <a style="color:red;font-weight:bold;font-size:20px;" href="/guide_pay">How To Pay?</a>
+                </div>
+              </div> 
+            </div>
+            <div class="col-xs-12" style="margin-top:20px;margin-bottom:20px;clear:both;padding:0;">
+              <!--Your personal data will be used to process your order, support your experience throughout
+                        this website, and for other purposes described in our privacy policy.-->
+
+            </div>
+            <div style="margin: 0 auto;width: 100%;height:100px;clear:both;">
+              <button type="button" id="button-shipping" data-loading-text="Loading..." onclick="window.location.href= './orderComplete.html' " class="btn col-xs-12"
+                style="background:#F8634A;color:#ffffff;border:none;">CONTINUE</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/catalog/view/javascript/googlemaps/google_api_autocomplete.js?&amp;v=45643a14"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS1BOHdA0AkLB1935WY7lJlLRDSSyjgnU&libraries=places&callback=initAutocomplete"
+      async defer></script>
+
+    
+    <div class="widget-connect widget-connect-right">
+
+      <a class="widget-connect__button button-slide-out widget-connect__button-telegram " href="https://t.me/usiddean"
+        data-toggle="tooltip" data-placement="left" title="usiddean" target="_blank"></a>
+      <a class="widget-connect__button button-slide-out widget-connect__button-whatsapp "
+        href="https://wa.me/13474728713" data-toggle="tooltip" data-placement="left" title="13474728713"
+        target="_blank"></a>
+      <a class="widget-connect__button button-slide-out widget-connect__button-telephone " href="tel:13474728713"
+        data-toggle="tooltip" data-placement="left" title="13474728713" target="_blank"></a>
+      <a class="widget-connect__button button-slide-out widget-connect__button-email " href="mailto:order@idlord.xyz"
+        data-toggle="tooltip" data-placement="left" title="order@idlord.xyz" target="_blank"></a>
+
+      <div class="widget-connect__button-activator" style="background-color: #cd4e37;">
+        <div class="widget-connect__button-activator-icon"></div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+      $(".widget-connect__button-activator-icon").click(function () {
+        $(this).toggleClass("active");
+        $(".widget-connect").toggleClass("active");
+        $("a.widget-connect__button").toggleClass("button-slide-out button-slide");
+      });
+    </script>
+
+
+    <footer>
+      <div class="grid-rows">
+        <div class="grid-row grid-row-2">
+          <div class="grid-cols">
+            <div class="grid-col grid-col-1">
+              <div class="grid-items">
+                <div class="grid-item grid-item-1">
+                  <div class="module module-blocks module-blocks-257 blocks-grid">
+                    <div class="module-body">
+                      <div class="module-item module-item-1 no-expand">
+                        <div class="block-body expand-block">
+                          <div class="block-header"><img
+                              src="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-200x232fill.png"
+                              srcset="https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-200x232fill.png 1x, https://www.idlord.xyz/image/cache/catalog/9c73a5f313a3d8e7f2088b9def96527-400x465fill.png 2x"
+                              alt="" width="200" height="" class="block-image" /></div>
+                          <div class="block-wrapper">
+                            <div class="block-content  block-html">
+                              <p><b>&nbsp;</b></p>
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-col grid-col-2">
+              <div class="grid-items">
+                <div class="grid-item grid-item-1">
+                  <div class="links-menu links-menu-75">
+                    <h3 class="title module-title">Customer Service</h3>
+                    <ul class="module-body">
+                      <li class="menu-item links-menu-item links-menu-item-1">
+                        <a href="/contact-us">
+                          <span class="links-text">Contact</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-6">
+                        <a href="/faq">
+                          <span class="links-text">FAQ</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-7">
+                        <a href="/terms">
+                          <span class="links-text">Terms & Conditions</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-8">
+                        <a href="/shipping-and-delivery">
+                          <span class="links-text">Shipping And Delivery</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-9">
+                        <a href="https://www.idlord.xyz/privacy">
+                          <span class="links-text">Privacy Policy</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-10">
+                        <a href="refund-and-return-policy">
+                          <span class="links-text">Refund and Return Policy</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-col grid-col-3">
+              <div class="grid-items">
+                <div class="grid-item grid-item-1">
+                  <div class="links-menu links-menu-76">
+                    <h3 class="title module-title">My Account</h3>
+                    <ul class="module-body">
+                      <li class="menu-item links-menu-item links-menu-item-1">
+                        <a href="https://www.idlord.xyz/index.php?route=account/account">
+                          <span class="links-text">My Account</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-2">
+                        <a href="https://www.idlord.xyz/index.php?route=account/order">
+                          <span class="links-text">Order History</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="grid-col grid-col-4">
+              <div class="grid-items">
+                <div class="grid-item grid-item-1">
+                  <div class="links-menu links-menu-310">
+                    <h3 class="title module-title">CONTACT US</h3>
+                    <ul class="module-body">
+                      <li class="menu-item links-menu-item links-menu-item-1">
+                        <a>
+                          <span class="links-text">Address：5651 MOSQUITO PASS DR, COLORADO SPRINGS, CO, UNITED
+                            STATES</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-2">
+                        <a>
+                          <span class="links-text">Phone：+1 347 472-8713</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-3">
+                        <a>
+                          <span class="links-text">Email：order@idlord.xyz</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-4">
+                        <a>
+                          <span class="links-text">Telegram：@usiddean</span>
+                        </a>
+                      </li>
+
+                      <li class="menu-item links-menu-item links-menu-item-5">
+                        <a>
+                          <span class="links-text">Whatsapp：+1 347 472-8713</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row grid-row-3">
+          <div class="grid-cols">
+            <div class="grid-col grid-col-1">
+              <div class="grid-items">
+                <div class="grid-item grid-item-1">
+                  <div class="links-menu links-menu-77">
+                    <ul class="module-body">
+                      <li class="menu-item links-menu-item links-menu-item-1">
+                        <a>
+                          <span class="links-text">Copyright © 2024, IDLORD.XYZ, All Rights Reserved</span>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+  </div><!-- .site-wrapper -->
+
+
+
+
+
+
+
+  <script src="catalog/view/theme/journal3/lib/anime/anime.min.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/lib/vanilla-lazyload/lazyload.min.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/lib/countdown/jquery.countdown.min.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/lib/typeahead/typeahead.jquery.min.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/lib/hoverintent/jquery.hoverIntent.min.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/lib/cjs/cjs.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/js/common.js?v=45643a14"></script>
+  <script src="catalog/view/theme/journal3/js/journal.js?v=45643a14"></script>
+
+  <script type="text/javascript">$(document).ready(function () {
+      $('.product-options select:last').prop('selectedIndex', 1);
+      var yz = $('.product-price').text();
+      yz = yz.split("$")[1]
+      $('.product-options select:last').on('change', function () {
+        var selectedText = $(this).find('option:selected').text();
+        var qu = selectedText.split("(")[0]
+        var jia = parseInt(qu) / 100;
+
+        var zz = parseInt(yz) * jia
+        if (isNaN(zz)) {
+          zz = parseInt(yz)
+        }
+        $('.product-price').text('$' + zz.toFixed(2));
+        $('.product-tax').text('Ex Tax: $' + zz.toFixed(2));
+        console.log(qu);
+        console.log(zz);
+      });
+    });</script>
+
+
+  <div class="scroll-top">
+    <i class="fa fa-angle-up"></i>
+  </div>
+  <style>
+    .jt-img {
+      position: fixed;
+      bottom: 0px;
+      transform: translate(-50%, -50%);
+      animation: bounce1 1.5s infinite;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 99;
+    }
+
+    @keyframes bounce1 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @media (max-width:650px) {
+      .hidden-dm {
+        display: none !important
+      }
+    }
+
+    @media (min-width:650px) {
+      .hidden-sj {
+        display: none !important
+      }
+    }
+  </style>
+  <img src="/image/catalog/jt.png" class="hidden-dm jt-img">
+  <img src="/image/catalog/jt-sj.png" class="hidden-sj jt-img">
+  <script>
+    window.onscroll = function () {
+      var bottomOfWindow = document.documentElement.scrollTop + window.innerHeight;
+      var bottomOfDocument = document.documentElement.scrollHeight;
+
+      if (bottomOfWindow >= bottomOfDocument - 200) {
+        $('.jt-img').hide()
+      } else {
+        $('.jt-img').show()
+      }
+    };
+    $('.djs').click(function () {
+      location.href = '/order';
+    })
+  </script>
+  <style>
+    .widget-connect {
+      bottom: 93px;
+    }
+
+    .widget-connect-right2 {
+      width: 128px;
+      height: 40px;
+      background-image: url(/image/catalog/home/float.png?122333);
+      color: #444444;
+      line-height: 37px;
+      right: 75px;
+      bottom: 100px;
+      z-index: 999999;
+    }
+
+    .psmtc_dFeO2 {
+      width: 177px;
+      height: 40px;
+      background-image: url(/image/catalog/home/float.png?122333);
+      color: #444444;
+      line-height: 37px;
+      right: 52px;
+      bottom: 13px;
+      z-index: 999999;
+      position: absolute;
+      background-size: 100% 100%;
+      display: none;
+    }
+
+    .ps_rvm__hidden .psmtc_dFeO2 {
+      display: block;
+    }
+
+    @media (max-width: 470px) {
+      .psmtc_dFeO2 {
+        display: none !important;
+      }
+
+      .widget-connect-right2 {
+        right: 60px;
+      }
+    }
+  </style>
+  <div class="widget-connect widget-connect-right2">
+    <span style="margin-left: 15px;">popular chat</span>
+  </div>
+  <div class="psmtc_dFeO ">
+    <div class="psmtc_dFeO2">
+      <span style="margin-left: 15px;">privacy online chat</span>
+    </div>
+  </div>
+</body>
+
+</html>
